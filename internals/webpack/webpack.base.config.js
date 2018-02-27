@@ -89,6 +89,9 @@ module.exports = (options) => ({
           'babel-loader',
           'eslint-loader',
         ],
+      }, {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },

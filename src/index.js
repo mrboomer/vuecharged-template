@@ -1,10 +1,8 @@
 import Vue from 'vue';
+import App from './components/App';
 
 const app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!',
-  },
+  ...App,
 });
 
 // Install ServiceWorker and AppCache in the end since
