@@ -11,7 +11,6 @@ module.exports = require('./webpack.base.config')({
   // Add hot reloading in development
   entry: [
     'eventsource-polyfill', // Necessary for hot reloading with IE
-    'webpack-hot-middleware/client?reload=true',
     path.join(process.cwd(), 'src/index.js'),
   ],
 
@@ -27,10 +26,9 @@ module.exports = require('./webpack.base.config')({
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // Tell webpack we want hot reloading
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
-    new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      filename: 'src/index.html',
+      filename: 'index.html',
       template: 'src/index.html',
       inject: true,
     }),
