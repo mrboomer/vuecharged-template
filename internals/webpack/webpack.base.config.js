@@ -1,3 +1,7 @@
+/**
+ * BASE WEBPACK CONFIGURATION
+ */
+
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -35,6 +39,9 @@ module.exports = (options) => ({
   module: {
     loaders: [
       {
+        test: /\.vue$/,
+        loaders: ['vue-loader'],
+      }, {
         test: /\.js$/, // Transform all .js files required somewhere with Babel
         loader: 'babel-loader',
         exclude: /node_modules/,
@@ -83,6 +90,12 @@ module.exports = (options) => ({
     ],
     rules: [
       {
+        test: /\.vue$/,
+        use: [
+          'vue-loader',
+          'eslint-loader',
+        ],
+      }, {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
@@ -103,6 +116,8 @@ module.exports = (options) => ({
     extensions: [
       '.js',
       '.vue',
+      '.css',
+      '.scss',
     ],
   },
   devtool: options.devtool,
