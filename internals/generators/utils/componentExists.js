@@ -1,7 +1,8 @@
 /**
- * componentExists
+ * Component Exists Util
  *
  * Check whether the given component exists in either the presentational or component directory
+ *
  */
 
 const fs = require('fs');

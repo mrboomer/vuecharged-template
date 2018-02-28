@@ -4,16 +4,12 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (options) => ({
   entry: options.entry,
   output: options.output,
   plugins: options.plugins.concat([
-    new CleanWebpackPlugin(['dist'], {
-      root: process.cwd(),
-    }),
     new webpack.ProvidePlugin({
       // make fetch available
       fetch: 'exports-loader?self.fetch!whatwg-fetch',

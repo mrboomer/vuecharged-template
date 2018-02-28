@@ -4,6 +4,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 
@@ -22,6 +23,9 @@ module.exports = require('./webpack.base.config')({
   },
 
   plugins: [
+    new CleanWebpackPlugin(['dist'], {
+      root: process.cwd(),
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       children: true,
@@ -50,8 +54,6 @@ module.exports = require('./webpack.base.config')({
     // Put it in the end to capture all the HtmlWebpackPlugin's
     // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
     new OfflinePlugin({
-      relativePaths: true,
-
       ServiceWorker: {
         output: 'assets/js/sw.js',
       },

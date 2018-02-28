@@ -20,7 +20,7 @@ module.exports = {
     }
   },
   rules: {
-    // don't require .vue extension when importing
+    // don't require .vue/.css/.scss extensions when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
       vue: 'never',
