@@ -23,9 +23,16 @@
 import {
   INCREMENT,
   DECREMENT,
+  UPDATE_NAME,
 } from './constants';
 
 const actions = {
+  updateName({ commit }, payload) {
+    commit({
+      type: UPDATE_NAME,
+      name: payload.name,
+    });
+  },
   incrementCounter({ commit }) {
     commit({
       type: INCREMENT,

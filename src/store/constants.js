@@ -15,5 +15,7 @@
  *
  */
 
+export const UPDATE_NAME = 'ExampleComponent/UPDATE_NAME';
+
 export const INCREMENT = 'ExampleComponent/INCREMENT';
 export const DECREMENT = 'ExampleComponent/DECREMENT';

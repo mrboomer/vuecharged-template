@@ -21,9 +21,13 @@
 import {
   INCREMENT,
   DECREMENT,
+  UPDATE_NAME,
 } from './constants';
 
 const mutations = {
+  [UPDATE_NAME](state, payload) {
+    state.name = payload.name;
+  },
   [INCREMENT](state) {
     state.count += 1;
   },

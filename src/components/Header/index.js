@@ -1,10 +1,10 @@
 import Vue from 'vue';
-import './style.scss';
+import './style';
 
 export default Vue.component('Header', {
   template: `
     <header>
-      <h2>Header</h2>
+
     </header>
   `,
 });

@@ -14,10 +14,17 @@ Vue.use(Vuex);
  *
  * Usage:
  *
- * 1. Create a new mutation type. - "What do you want to do?" (constants.js)
- * 2. Create a new action. - "Tell the store what you want to do." (actions.js)
- * 3. Add any new variables to the state. - "What variable will be updated?" (state.js)
- * 4. Create a new mutation. - "Tell the store to update your variable" (mutations.js)
+ * 1. Add any new variables to the state. - "What variable will be updated?"
+ *    (state.js)
+ *
+ * 1. Create a new mutation type. - "What do you want to do?" - like 'git add .'
+ *    (constants.js)
+ *
+ * 2. Create a new action. - "Tell the store what you want to do." - like 'git commit'
+ *    (actions.js)
+ *
+ * 3. Create a new mutation. - "Tell the store to update your variable" - like 'git push'
+ *    (mutations.js)
  *
  */
 

@@ -1,11 +1,9 @@
 <template>
-  <main>
-    <ExampleComponent />
-  </main>
+  <ExampleComponent />
 </template>
 
 <script>
-import ExampleComponent from '../components/ExampleComponent';
+import ExampleComponent from 'components/ExampleComponent';
 
 export default {
   components: {

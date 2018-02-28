@@ -1,6 +1,6 @@
-import Header from '../Header';
-import Footer from '../Footer';
-import './style.scss';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import './style';
 
 export default {
   el: '#app',

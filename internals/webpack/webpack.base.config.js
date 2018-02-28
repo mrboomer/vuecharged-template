@@ -109,16 +109,11 @@ module.exports = (options) => ({
     ],
   },
   resolve: {
-    modules: ['app', 'node_modules'],
+    modules: ['src', 'node_modules'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
     },
-    extensions: [
-      '.js',
-      '.vue',
-      '.css',
-      '.scss',
-    ],
+    extensions: ['.js', '.vue', '.css', '.scss'],
   },
   devtool: options.devtool,
   target: 'web', // Make web variables accessible to webpack, e.g. window

@@ -1,10 +1,10 @@
 import Vue from 'vue';
-import './style.scss';
+import './style';
 
 export default Vue.component('Footer', {
   template: `
     <footer>
-      <h2>Footer</h2>
+
     </footer>
   `,
 });

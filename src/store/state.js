@@ -9,6 +9,7 @@
  */
 
 const state = {
+  name: 'John Doe',
   count: 0,
 };
 

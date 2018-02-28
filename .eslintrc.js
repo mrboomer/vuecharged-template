@@ -1,3 +1,7 @@
+const path = require('path');
+
+console.log(JSON.stringify(path.join(__dirname)));
+
 module.exports = {
   root: true,
   parserOptions: {
@@ -15,7 +19,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       webpack: {
-        config: 'internals/webpack/webpack.base.config.js'
+        config: 'internals/webpack/webpack.dev.config.js'
       }
     }
   },
@@ -23,7 +27,9 @@ module.exports = {
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
-      vue: 'never'
+      vue: 'never',
+      css: 'never',
+      scss: 'never'
     }],
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
