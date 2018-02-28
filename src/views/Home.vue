@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ExampleContainer from 'containers/ExampleContainer';
+import ExampleContainer from 'container/ExampleContainer';
 
 export default {
   components: {

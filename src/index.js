@@ -1,8 +1,12 @@
+/**
+ * Application Entry
+ */
+
 import Vue from 'vue';
 import { sync } from 'vuex-router-sync';
 import router from 'router';
 import store from 'store';
-import App from 'containers/App';
+import App from 'container/App';
 
 sync(store, router);
 

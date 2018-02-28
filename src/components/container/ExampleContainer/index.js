@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-export default Vue.component('ExampleComponent', {
+export default Vue.component('ExampleContainer', {
   methods: {
     increment() {
       this.$store.dispatch('incrementCounter');
@@ -18,7 +18,7 @@ export default Vue.component('ExampleComponent', {
     },
   },
   template: `
-    <section class="example-component">
+    <section class="example-container">
       <!-- Input Example -->
       <div class="container">
         <h1 class="mt-5">Name: <span v-text="this.$store.state.name"></span></h1>
