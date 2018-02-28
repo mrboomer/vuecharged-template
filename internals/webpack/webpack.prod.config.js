@@ -15,7 +15,7 @@ module.exports = require('./webpack.base.config')({
 
   // Utilize long-term caching by adding content hashes (not compilation hashes) to compiled assets
   output: {
-    publicPath: '/',
+    publicPath: './',
     path: path.resolve(process.cwd(), 'dist'),
     filename: 'assets/js/[name].[chunkhash].js',
     chunkFilename: 'assets/js/[name].[chunkhash].chunk.js',

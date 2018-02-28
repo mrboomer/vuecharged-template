@@ -112,6 +112,8 @@ module.exports = (options) => ({
     modules: ['src', 'node_modules'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
+      containers: 'components/containers',
+      presentational: 'components/presentational',
     },
     extensions: ['.js', '.vue', '.css', '.scss'],
   },

@@ -1,5 +1,5 @@
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import Header from 'presentational/Header';
+import Footer from 'presentational/Footer';
 import './style';
 
 export default {

@@ -1,13 +1,13 @@
 <template>
-  <ExampleComponent />
+  <ExampleContainer />
 </template>
 
 <script>
-import ExampleComponent from 'components/ExampleComponent';
+import ExampleContainer from 'containers/ExampleContainer';
 
 export default {
   components: {
-    ExampleComponent,
+    ExampleContainer,
   },
 };
 </script>

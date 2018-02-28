@@ -1,7 +1,3 @@
-const path = require('path');
-
-console.log(JSON.stringify(path.join(__dirname)));
-
 module.exports = {
   root: true,
   parserOptions: {
