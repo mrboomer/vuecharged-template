@@ -3,7 +3,8 @@
 </template>
 
 <script>
-import ExampleContainer from 'container/ExampleContainer';
+// Lazy Load Components
+const ExampleContainer = () => import('container/ExampleContainer');
 
 export default {
   components: {
