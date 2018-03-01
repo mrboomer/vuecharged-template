@@ -14,6 +14,10 @@
   },
   "author": "Daniel Escobedo <daniel@escobedo.io>",
   "license": "MIT",
+  "repository": {
+    "url": "git@github.com:mrboomer/vue-template.git",
+    "type": "git"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
