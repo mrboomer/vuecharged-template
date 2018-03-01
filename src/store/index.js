@@ -4,19 +4,14 @@
  * This store holds the entire state. The store’s state can only be changed by
  * committing mutations.
  *
+ * Further Reading: https://vuex.vuejs.org/en/intro.html
+ *
  * Usage:
  *
- * 1. Add any new variables to the state. - "What variable will be updated?"
- *    (state.js)
- *
- * 1. Create a new mutation type. - "What do you want to do?" - like 'git add .'
- *    (constants.js)
- *
- * 2. Create a new action. - "Tell the store what you want to do." - like 'git commit'
- *    (actions.js)
- *
- * 3. Create a new mutation. - "Tell the store to update your variable" - like 'git push'
- *    (mutations.js)
+ * 1. Add any new variables to the state. (state.js)
+ * 2. Create a new mutation type. (constants.js)
+ * 3. Create a new action. (actions.js)
+ * 4. Create a new mutation. (mutations.js)
  *
  */
 
