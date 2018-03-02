@@ -2,7 +2,7 @@
  * Container Generator
  */
 
-const componentExists = require('../utils/componentExists');
+const helpers = require('../helpers.js');
 
 module.exports = {
   description: 'Add a Container Component',
@@ -13,7 +13,7 @@ module.exports = {
     default: 'Form',
     validate: (value) => {
       if ((/.+/).test(value)) {
-        return componentExists(value) ? 'A component with this name already exists' : true;
+        return helpers.componentExists(value) ? 'A component with this name already exists' : true;
       }
 
       return 'The name is required';
