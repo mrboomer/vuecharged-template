@@ -1,5 +1,7 @@
 <template>
-  <ExampleContainer />
+  <main>
+    <ExampleContainer />
+  </main>
 </template>
 
 <script>

@@ -2,9 +2,7 @@
  * BASE WEBPACK CONFIGURATION
  */
 
-const path = require('path');
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (options) => ({
   entry: options.entry,
@@ -23,17 +21,9 @@ module.exports = (options) => ({
       },
     }),
     new webpack.ContextReplacementPlugin(/\.\/locale$/, 'empty-module', false, /js$/),
-    // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(process.cwd(), 'src/assets'),
-        to: path.resolve(process.cwd(), 'dist/assets'),
-        ignore: ['.*'],
-      },
-    ]),
   ]),
   module: {
-    rules: [
+    rules: options.moduleRules.concat([
       {
         test: /\.vue$/,
         use: [
@@ -48,52 +38,9 @@ module.exports = (options) => ({
           'eslint-loader',
         ],
       }, {
-        // Do not transform vendor's CSS with CSS-modules
-        // The point is that they remain in global scope.
-        // Since we require these CSS files in our JS or CSS files,
-        // they will be a part of our compilation either way.
-        // So, no need for ExtractTextPlugin here.
-        test: /\.css$/,
-        include: /node_modules/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
-      }, {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
-      }, {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: [
           'file-loader',
-        ],
-      }, {
-        test: /\.(gif|png|jpe?g)$/i,
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 65,
-              },
-              optipng: {
-                optimizationLevel: 7,
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4,
-              },
-            },
-          },
         ],
       }, {
         test: /\.html$/,
@@ -114,7 +61,7 @@ module.exports = (options) => ({
           },
         }],
       },
-    ],
+    ]),
   },
   resolve: {
     modules: ['src', 'node_modules'],
@@ -122,7 +69,6 @@ module.exports = (options) => ({
       vue$: 'vue/dist/vue.esm.js',
       container: 'components/container',
       presentational: 'components/presentational',
-      images: 'assets/images',
     },
     extensions: ['.js', '.vue', '.css', '.scss'],
   },

@@ -5,6 +5,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 
@@ -26,6 +27,14 @@ module.exports = require('./webpack.base.config')({
     new CleanWebpackPlugin(['dist'], {
       root: process.cwd(),
     }),
+    // copy custom static assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(process.cwd(), 'src/static'),
+        to: path.resolve(process.cwd(), 'dist/'),
+        ignore: ['.*'],
+      },
+    ]),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       children: true,
@@ -76,6 +85,57 @@ module.exports = require('./webpack.base.config')({
 
       AppCache: false,
     }),
+  ],
+
+  moduleRules: [
+    {
+      // Do not transform vendor's CSS with CSS-modules
+      // The point is that they remain in global scope.
+      // Since we require these CSS files in our JS or CSS files,
+      // they will be a part of our compilation either way.
+      // So, no need for ExtractTextPlugin here.
+      test: /\.css$/,
+      include: /node_modules/,
+      use: [
+        'style-loader',
+        'css-loader',
+      ],
+    },
+    {
+      // No source maps for sass files
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader',
+      ],
+    },
+    {
+      // Optimize images for production
+      test: /\.(gif|png|jpe?g)$/i,
+      use: [
+        'file-loader?name=assets/img/[hash].[ext]',
+        {
+          loader: 'image-webpack-loader',
+          options: {
+            mozjpeg: {
+              progressive: true,
+              quality: 65,
+            },
+            optipng: {
+              optimizationLevel: 7,
+            },
+            gifsicle: {
+              interlaced: false,
+            },
+            pngquant: {
+              quality: '65-90',
+              speed: 4,
+            },
+          },
+        },
+      ],
+    },
   ],
 
   performance: {

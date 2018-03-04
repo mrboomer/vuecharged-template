@@ -38,6 +38,52 @@ module.exports = require('./webpack.base.config')({
     }),
   ],
 
+  moduleRules: [
+    {
+      // Emit source maps for sass files
+      test: /\.css$/,
+      include: /node_modules/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true,
+          },
+        },
+      ],
+    },
+    {
+      // Emit source maps for sass files
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true,
+          },
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true,
+          },
+        },
+      ],
+    },
+    {
+      // Don't optimize images for development
+      test: /\.(gif|png|jpe?g)$/i,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      }],
+    },
+  ],
+
   // Emit a source map for easier debugging
   devtool: 'cheap-module-eval-source-map',
 

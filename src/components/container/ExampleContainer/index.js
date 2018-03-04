@@ -1,3 +1,7 @@
+/**
+ * Example Container
+ */
+
 import Vue from 'vue';
 
 export default Vue.component('ExampleContainer', {

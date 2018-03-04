@@ -1,3 +1,7 @@
+/**
+ * Root
+ */
+
 import Header from 'presentational/Header';
 import Footer from 'presentational/Footer';
 import './style';
