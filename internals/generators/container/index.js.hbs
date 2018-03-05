@@ -3,6 +3,11 @@
  */
 
 import Vue from 'vue';
+{{#if wantStyleSheet}}
+
+// StyleSheet
+import './style';
+{{/if}}
 
 export default Vue.component('{{properCase name}}', {
   template: `

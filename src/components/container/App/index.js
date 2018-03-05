@@ -4,6 +4,8 @@
 
 import Header from 'presentational/Header';
 import Footer from 'presentational/Footer';
+
+// StyleSheet
 import './style';
 
 export default {
