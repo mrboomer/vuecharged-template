@@ -1,7 +1,7 @@
 /* eslint import/prefer-default-export: 0 */
 
 /**
- * Constants (Mutation Types)
+ * ExampleContainer Constants (Mutation Types)
  *
  * Mutations that are possible in this application.
  *

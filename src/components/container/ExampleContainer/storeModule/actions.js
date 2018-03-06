@@ -1,5 +1,5 @@
 /**
- * Actions
+ * ExampleContainer Actions
  *
  * These are functions that dispatch (communicate changes to the store) our
  * mutations. Actions do not mutate the state directly, but only commit the

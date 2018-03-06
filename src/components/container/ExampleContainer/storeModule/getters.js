@@ -1,5 +1,5 @@
 /**
- * Global Getters
+ * ExampleContainer Global Getters
  *
  * These are functions that take a state object and returns a value from it.
  * You can think of getters as computed properties for data in the store.

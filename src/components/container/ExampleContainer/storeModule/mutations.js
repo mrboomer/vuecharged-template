@@ -1,5 +1,5 @@
 /**
- * Mutations
+ * ExampleContainer Mutations
  *
  * The only way to change the state in Vuex is by committing a mutation. This is
  * also the function that updates the view.

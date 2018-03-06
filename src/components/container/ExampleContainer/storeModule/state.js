@@ -1,5 +1,5 @@
 /**
- * State
+ * ExampleContainer State
  *
  * This single object contains all the application level state and serves as
  * the "single source of truth".
