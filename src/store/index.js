@@ -17,16 +17,24 @@
 
 import Vue from 'vue';
 import Vuex from 'vuex';
+
+// Global
 import state from './state';
-import mutations from './mutations';
 import actions from './actions';
+import mutations from './mutations';
+
+// Modules
+import exampleContainerModule from '../components/container/ExampleContainer/storeModule';
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state,
-  mutations,
   actions,
+  mutations,
+  modules: {
+    exampleContainer: exampleContainerModule,
+  },
 });
 
 export default store;

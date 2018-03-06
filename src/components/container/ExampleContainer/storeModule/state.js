@@ -1,5 +1,5 @@
 /**
- * Global State
+ * State
  *
  * This single object contains all the application level state and serves as
  * the "single source of truth".
@@ -9,7 +9,8 @@
  */
 
 const state = {
-
+  name: 'John Doe',
+  count: 0,
 };
 
 export default state;

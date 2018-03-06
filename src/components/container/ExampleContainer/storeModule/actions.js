@@ -1,5 +1,5 @@
 /**
- * Global Actions
+ * Actions
  *
  * These are functions that dispatch (communicate changes to the store) our
  * mutations. Actions do not mutate the state directly, but only commit the
@@ -21,11 +21,28 @@
  */
 
 import {
-
+  INCREMENT,
+  DECREMENT,
+  UPDATE_NAME,
 } from './constants';
 
 const actions = {
-
+  updateName({ commit }, payload) {
+    commit({
+      type: UPDATE_NAME,
+      name: payload.name,
+    });
+  },
+  incrementCounter({ commit }) {
+    commit({
+      type: INCREMENT,
+    });
+  },
+  decrementCounter({ commit }) {
+    commit({
+      type: DECREMENT,
+    });
+  },
 };
 
 export default actions;

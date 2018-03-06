@@ -7,10 +7,10 @@ import Vue from 'vue';
 export default Vue.component('ExampleContainer', {
   methods: {
     increment() {
-      this.$store.dispatch('incrementCounter');
+      this.$store.dispatch('exampleContainer/incrementCounter');
     },
     decrement() {
-      this.$store.dispatch('decrementCounter');
+      this.$store.dispatch('exampleContainer/decrementCounter');
     },
     updateName(e) {
       const nameInputed = e.target.value;
@@ -18,7 +18,7 @@ export default Vue.component('ExampleContainer', {
         name: nameInputed || 'John Doe',
       };
 
-      this.$store.dispatch('updateName', payload);
+      this.$store.dispatch('exampleContainer/updateName', payload);
     },
   },
   template: `

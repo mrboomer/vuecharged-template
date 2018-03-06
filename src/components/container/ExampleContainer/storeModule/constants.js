@@ -1,7 +1,7 @@
 /* eslint import/prefer-default-export: 0 */
 
 /**
- * Global Constants (Mutation Types)
+ * Constants (Mutation Types)
  *
  * Mutations that are possible in this application.
  *
@@ -14,3 +14,8 @@
  * export const YOUR_ACTION_CONSTANT = 'YOUR_ACTION_CONSTANT';
  *
  */
+
+export const UPDATE_NAME = 'UPDATE_NAME';
+
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';
