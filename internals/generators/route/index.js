@@ -2,14 +2,7 @@
  * Route Generator
  */
 
-const fs = require('fs');
-const path = require('path');
 const helpers = require('../helpers.js');
-
-function trimTemplateFile(template) {
-  // Loads the template file and trims the whitespace and then returns the content as a string.
-  return fs.readFileSync(path.join(__dirname, `./${template}`), 'utf8').replace(/\s*$/, '');
-}
 
 module.exports = {
   description: 'Add a Route',
@@ -49,13 +42,13 @@ module.exports = {
     const action = {
       type: 'modify',
       path: '../../src/router/routes.js',
-      pattern: /(;\n\sexport\sdefault\s\[\n\s\s\{)/g,
+      pattern: /(;\n\sexport\sdefault\s\[\n\s\s\{)/,
     };
 
     if (helpers.viewImportExists(data.view)) {
-      action.template = trimTemplateFile('routeOnly.hbs');
+      action.template = helpers.trimTemplateFile('./route/routeOnly.hbs');
     } else {
-      action.template = trimTemplateFile('route.hbs');
+      action.template = helpers.trimTemplateFile('./route/route.hbs');
     }
 
     actions.push(action);

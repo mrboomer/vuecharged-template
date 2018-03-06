@@ -12,6 +12,10 @@ module.exports = {
     }
     return txt;
   },
+  trimTemplateFile(template) {
+    // Loads the template file and trims the whitespace and then returns the content as a string.
+    return fs.readFileSync(path.join(__dirname, template), 'utf8').replace(/\s*$/, '');
+  },
   componentExists(comp) {
     const pageContainers = fs.readdirSync(path.join(__dirname, '../../src/components/container'));
     const pagePresentationals = fs.readdirSync(path.join(__dirname, '../../src/components/presentational'));
