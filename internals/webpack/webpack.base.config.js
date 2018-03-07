@@ -70,7 +70,7 @@ module.exports = (options) => ({
       container: 'components/container',
       presentational: 'components/presentational',
     },
-    extensions: ['.js', '.vue', '.css', '.scss'],
+    extensions: ['.js', '.vue'],
   },
   devtool: options.devtool,
   target: 'web', // Make web variables accessible to webpack, e.g. window

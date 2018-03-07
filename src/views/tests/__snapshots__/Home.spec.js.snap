@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home.vue Component renders to a nice snapshot 1`] = `
+
+<main data-server-rendered="true">
+</main>
+
+`;

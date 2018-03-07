@@ -7,10 +7,11 @@
     "lint": "npm run lint:js",
     "lint:eslint": "eslint --ignore-path .gitignore",
     "lint:js": "npm run lint:eslint -- . ",
-    "dev": "webpack-dev-server --inline --progress --config internals/webpack/webpack.dev.config.js --color -p --progress",
+    "dev": "webpack-dev-server --inline --progress --config ./internals/webpack/webpack.dev.config.js --color -p --progress",
     "start": "npm run dev",
-    "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.config.js --color -p --progress",
-    "generate": "plop --plopfile internals/generators/index.js"
+    "build": "cross-env NODE_ENV=production webpack --config ./internals/webpack/webpack.prod.config.js --color -p --progress",
+    "generate": "plop --plopfile internals/generators/index.js",
+    "test": "cross-env NODE_ENV=test jest --coverage"
   },
   "author": "Daniel Escobedo <daniel@escobedo.io>",
   "license": "MIT",
@@ -18,11 +19,39 @@
     "url": "git@github.com:mrboomer/vue-template.git",
     "type": "git"
   },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "modulePaths": ["./src"],
+    "moduleDirectories": ["node_modules"],
+    "moduleNameMapper": {
+      "^vue$": "vue/dist/vue.common.js",
+      "container/(.*)$": "components/container/$1",
+      "presentational/(.*)$": "components/presentational/$1",
+      ".scss$": "<rootDir>/internals/helpers/SassStub.js"
+    },
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      ".*": "babel-jest"
+    },
+    "snapshotSerializers": [
+      "jest-serializer-html"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.{js,vue}"
+    ]
+  },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.12",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.2",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "cross-env": "^5.1.3",
@@ -32,19 +61,25 @@
     "eslint-import-resolver-webpack": "^0.8.4",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jest": "^21.13.0",
     "eslint-plugin-vue": "^4.2.2",
     "eventsource-polyfill": "^0.9.6",
     "exports-loader": "^0.7.0",
     "file-loader": "^1.1.6",
     "html-loader": "^0.5.5",
     "image-webpack-loader": "^4.1.0",
+    "jest": "^22.4.2",
+    "jest-serializer-html": "^5.0.0",
+    "jsdom": "^11.6.2",
     "json-loader": "^0.5.7",
     "node-sass": "^4.7.2",
     "plop": "^1.9.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.2",
     "url-loader": "^0.6.2",
+    "vue-jest": "^2.1.1",
     "vue-loader": "^14.1.1",
+    "vue-server-renderer": "^2.5.13",
     "vue-template-compiler": "^2.5.13",
     "webpack-dev-middleware": "^2.0.5",
     "webpack-dev-server": "^2.11.1",
