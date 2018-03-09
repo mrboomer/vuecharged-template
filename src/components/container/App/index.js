@@ -6,7 +6,7 @@ import Header from 'presentational/Header';
 import Footer from 'presentational/Footer';
 
 // StyleSheet
-import './style';
+import './style.scss';
 
 export default {
   el: '#app',

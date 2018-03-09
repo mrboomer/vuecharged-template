@@ -1,7 +1,15 @@
 {
-  "presets": ["env"],
+  "presets": [["env", {"modules": false}]],
   "plugins": [
+    ["syntax-dynamic-import"],
     ["transform-object-rest-spread", { "useBuiltIns": true }],
-    ["syntax-dynamic-import"]
-  ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        ["transform-es2015-modules-commonjs"],
+        ["dynamic-import-node"],
+      ]
+    }
+  }
 }

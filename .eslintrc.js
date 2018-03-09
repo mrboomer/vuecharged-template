@@ -6,10 +6,10 @@ module.exports = {
   env: {
     browser: true,
   },
-  extends: ['plugin:vue/recommended', 'airbnb-base'],
+  extends: ['plugin:vue/recommended', 'airbnb-base', 'plugin:jest/recommended'],
   // required to lint *.vue files
   plugins: [
-    'vue'
+    'vue',
   ],
   // check if imports actually resolve
   settings: {
@@ -23,9 +23,7 @@ module.exports = {
     // don't require .vue/.css/.scss extensions when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
-      vue: 'never',
-      css: 'never',
-      scss: 'never'
+      vue: 'never'
     }],
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
