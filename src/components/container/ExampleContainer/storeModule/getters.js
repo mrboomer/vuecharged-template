@@ -9,6 +9,9 @@
  */
 
 const getters = {
+  positiveCount(state) {
+    return state.count > -1 ? state.count : 0;
+  },
   fibonacciNumber(state) {
     const fibonacci = (number) => {
       if (number < 1) return 0;
