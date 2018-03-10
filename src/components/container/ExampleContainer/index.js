@@ -15,18 +15,11 @@ export default Vue.component('ExampleContainer', {
       count: (state) => state.count,
     }),
     ...mapGetters([
+      'positiveCount',
       'fibonacciNumber',
     ]),
   },
   methods: {
-    increment() {
-      this.$store.dispatch('exampleContainer/incrementCounter');
-    },
-    decrement() {
-      if (this.count > 0) {
-        this.$store.dispatch('exampleContainer/decrementCounter');
-      }
-    },
     updateName(e) {
       const nameInputed = e.target.value;
       const payload = {
@@ -34,6 +27,12 @@ export default Vue.component('ExampleContainer', {
       };
 
       this.$store.dispatch('exampleContainer/updateName', payload);
+    },
+    increment() {
+      this.$store.dispatch('exampleContainer/incrementCounter');
+    },
+    decrement() {
+      this.$store.dispatch('exampleContainer/decrementCounter');
     },
   },
   template: `
@@ -60,7 +59,7 @@ export default Vue.component('ExampleContainer', {
 
       <!-- Getter Example -->
       <div class="container">
-        <h3 class="mt-5">Fibonacci Number <span v-text="this.count"></span>: <span v-text="this.fibonacciNumber"></span></h3>
+        <h3 class="mt-5">Fibonacci Number <span v-text="this.positiveCount"></span>: <span v-text="this.fibonacciNumber"></span></h3>
       </div>
     </section>
   `,

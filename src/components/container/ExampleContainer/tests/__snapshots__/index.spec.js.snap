@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExampleContainer Component renders to a nice snapshot 1`] = `
+
+<section data-server-rendered="true"
+         class="example-container"
+>
+  <div class="container">
+    <h1 class="mt-5">
+      Name:
+      <span>
+        John Doe
+      </span>
+    </h1>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span id="update-name"
+              class="input-group-text"
+        >
+          Update Name
+        </span>
+      </div>
+      <input type="text"
+             aria-describedby="update-name"
+             placeholder="John Doe"
+             class="form-control"
+      >
+    </div>
+  </div>
+  <div class="container">
+    <h2 class="mt-5">
+      Count:
+      <span>
+        2
+      </span>
+    </h2>
+    <div role="group"
+         aria-label="Basic example"
+         class="btn-group"
+    >
+      <button type="button"
+              class="btn btn-secondary"
+      >
+        Decrement
+      </button>
+      <button type="button"
+              class="btn btn-secondary"
+      >
+        Increment
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <h3 class="mt-5">
+      Fibonacci Number
+      <span>
+        2
+      </span>
+      :
+      <span>
+        1
+      </span>
+    </h3>
+  </div>
+</section>
+
+`;

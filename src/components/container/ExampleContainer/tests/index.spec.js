@@ -2,9 +2,10 @@ import { shallow, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
 import ExampleContainerComponent from '../index';
 
+const renderer = require('vue-server-renderer').createRenderer();
+
 const localVue = createLocalVue();
 localVue.use(Vuex);
-
 
 describe('ExampleContainer Component', () => {
   let store;
@@ -25,6 +26,7 @@ describe('ExampleContainer Component', () => {
     };
 
     getters = {
+      positiveCount: () => 2,
       fibonacciNumber: () => 1,
     };
 
@@ -40,38 +42,23 @@ describe('ExampleContainer Component', () => {
     });
   });
 
-  it('renders name value from store state', () => {
-    const wrapper = shallow(ExampleContainerComponent, { store, localVue });
-
-    // Rendered Location
-    const h1Span = wrapper.find('h1 span');
-
-    // Assert Result
-    expect(h1Span.text()).toBe(state.name);
-  });
-
   it('dispatches "UPDATE_NAME" action when input is changed', () => {
     const wrapper = shallow(ExampleContainerComponent, { store, localVue });
-
-    // Simulate Text Input
     const input = wrapper.find('input');
+
+    // Simulate Add Text
     input.element.value = 'test';
     input.trigger('input');
 
     // Assert Result
     expect(actions.updateName.mock.calls).toHaveLength(1);
-  });
 
-  it('renders count value from store state', () => {
-    const wrapper = shallow(ExampleContainerComponent, { store, localVue });
+    // Simulate Remove Text
+    input.element.value = '';
+    input.trigger('input');
 
-    // Rendered Locations
-    const h2Span = wrapper.find('h2 span');
-    const h3SpanFirst = wrapper.find('h3 span:first-of-type');
-
-    // Assert Results
-    expect(h2Span.text()).toBe(state.count.toString());
-    expect(h3SpanFirst.text()).toBe(state.count.toString());
+    // Assert Result
+    expect(actions.updateName.mock.calls).toHaveLength(2);
   });
 
   it('dispatches "DECREMENT" action when button is clicked', () => {
@@ -94,13 +81,36 @@ describe('ExampleContainer Component', () => {
     expect(actions.incrementCounter.mock.calls).toHaveLength(1);
   });
 
-  it('renders fibonacci value from store getter', () => {
+  it('renders values from store state', () => {
     const wrapper = shallow(ExampleContainerComponent, { store, localVue });
 
-    // Rendered Location
-    const h3SpanLast = wrapper.find('h3 span:last-of-type');
+    // Rendered Locations
+    const h1Span = wrapper.find('h1 span');
+    const h2Span = wrapper.find('h2 span');
 
     // Assert Result
+    expect(h1Span.text()).toBe(state.name);
+    expect(h2Span.text()).toBe(state.count.toString());
+  });
+
+  it('renders values from getters', () => {
+    const wrapper = shallow(ExampleContainerComponent, { store, localVue });
+
+    // Rendered Locations
+    const h3SpanFirst = wrapper.find('h3 span:first-of-type');
+    const h3SpanLast = wrapper.find('h3 span:last-of-type');
+
+    // Assert Results
+    expect(h3SpanFirst.text()).toBe(getters.positiveCount().toString());
     expect(h3SpanLast.text()).toBe(getters.fibonacciNumber().toString());
+  });
+
+  it('renders to a nice snapshot', () => {
+    const wrapper = shallow(ExampleContainerComponent, { store, localVue });
+    const { vm } = wrapper;
+
+    renderer.renderToString(vm, (err, str) => {
+      expect(str).toMatchSnapshot();
+    });
   });
 });
