@@ -21,9 +21,9 @@
  */
 
 import {
+  UPDATE_NAME,
   INCREMENT,
   DECREMENT,
-  UPDATE_NAME,
 } from './constants';
 
 const actions = {
