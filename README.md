@@ -2,6 +2,10 @@
 
 <br />
 
+<p align="center">
+  An opinionated Vue 2.0 starter template with CLI scaffolding superpowers.
+</p>
+
 <div align="center">
   <!-- Build Status -->
   <a href="https://travis-ci.org/mrboomer/vue-template">
@@ -22,10 +26,6 @@
 </div>
 
 <br />
-
-<p align="center">
-  An opinionated Vue 2.0 starter template with CLI scaffolding superpowers.
-</p>
 
 ## Getting Started
 
