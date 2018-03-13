@@ -1,6 +1,13 @@
 <h1 align="center"> Vue Template </h1> <br>
 
 <p align="center">
+[![Build Status](https://img.shields.io/travis/mrboomer/vue-template/master.svg)](https://travis-ci.org/mrboomer/vue-template)
+[![Coverage Status](https://img.shields.io/coveralls/github/mrboomer/vue-template/master.svg)](https://coveralls.io/github/mrboomer/vue-template?branch=master)
+[![Dependency Status](https://img.shields.io/david/mrboomer/vue-template.svg)](https://david-dm.org/mrboomer/vue-template)
+[![devDependencies Status](https://img.shields.io/david/dev/mrboomer/vue-template.svg)](https://david-dm.org/mrboomer/vue-template?type=dev)
+</p>
+
+<p align="center">
   An opinionated Vue 2.0 starter template with CLI scaffolding superpowers.
 </p>
 
