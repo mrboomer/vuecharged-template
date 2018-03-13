@@ -11,7 +11,7 @@
     "start": "npm run dev",
     "build": "cross-env NODE_ENV=production webpack --config ./internals/webpack/webpack.prod.config.js --color -p --progress",
     "generate": "plop --plopfile internals/generators/index.js",
-    "test": "cross-env NODE_ENV=test jest --coverage && npm run coveralls",
+    "test": "cross-env NODE_ENV=test jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "author": "Daniel Escobedo <daniel@escobedo.io>",
