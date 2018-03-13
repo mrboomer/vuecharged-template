@@ -1,11 +1,27 @@
-<h1 align="center"> Vue Template </h1> <br>
+<h1 align="center"> Vue Template </h1>
 
-<p align="center">
-[![Build Status](https://img.shields.io/travis/mrboomer/vue-template/master.svg)](https://travis-ci.org/mrboomer/vue-template)
-[![Coverage Status](https://img.shields.io/coveralls/github/mrboomer/vue-template/master.svg)](https://coveralls.io/github/mrboomer/vue-template?branch=master)
-[![Dependency Status](https://img.shields.io/david/mrboomer/vue-template.svg)](https://david-dm.org/mrboomer/vue-template)
-[![devDependencies Status](https://img.shields.io/david/dev/mrboomer/vue-template.svg)](https://david-dm.org/mrboomer/vue-template?type=dev)
-</p>
+<br />
+
+<div align="center">
+  <!-- Build Status -->
+  <a href="https://travis-ci.org/mrboomer/vue-template">
+    <img src="https://img.shields.io/travis/mrboomer/vue-template/master.svg" alt="Build Status" />
+  </a>
+  <!-- Test Coverage -->
+  <a href="https://coveralls.io/github/mrboomer/vue-template?branch=master">
+    <img src="https://img.shields.io/coveralls/github/mrboomer/vue-template/master.svg" alt="Test Coverage" />
+  </a>
+  <!-- Dependency Status -->
+  <a href="https://david-dm.org/mrboomer/vue-template">
+    <img src="https://img.shields.io/david/mrboomer/vue-template.svg" alt="Dependency Status" />
+  </a>
+  <!-- devDependency Status -->
+  <a href="https://david-dm.org/mrboomer/vue-template?type=dev">
+    <img src="https://img.shields.io/david/dev/mrboomer/vue-template.svg" alt="devDependency Status" />
+  </a>
+</div>
+
+<br />
 
 <p align="center">
   An opinionated Vue 2.0 starter template with CLI scaffolding superpowers.
