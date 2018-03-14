@@ -1,8 +1,7 @@
 /**
  * ExampleContainer State
  *
- * This single object contains all the application level state and serves as
- * the "single source of truth".
+ * This single object contains all the component level state.
  *
  * Further Reading: https://vuex.vuejs.org/en/state.html
  *

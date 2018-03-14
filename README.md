@@ -1,4 +1,4 @@
-<h1 align="center"> Vue Template </h1>
+<h1 align="center">VueCharged Template</h1>
 
 <br />
 

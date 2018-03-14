@@ -1,7 +1,7 @@
 {
-  "name": "vue-template",
-  "version": "0.1.0",
-  "description": "",
+  "name": "vuecharged-template",
+  "version": "1.0.0",
+  "description": "An opinionated Vue 2.0 starter template with CLI scaffolding superpowers.",
   "main": "src/index.js",
   "scripts": {
     "lint": "npm run lint:js",
@@ -17,7 +17,7 @@
   "author": "Daniel Escobedo <daniel@escobedo.io>",
   "license": "MIT",
   "repository": {
-    "url": "git@github.com:mrboomer/vue-template.git",
+    "url": "git@github.com:mrboomer/vuecharged-template.git",
     "type": "git"
   },
   "jest": {
@@ -34,12 +34,13 @@
     "moduleNameMapper": {
       "^vue$": "vue/dist/vue.common.js",
       "container/(.*)$": "components/container/$1",
-      "presentational/(.*)$": "components/presentational/$1",
-      ".scss$": "<rootDir>/internals/helpers/SassStub.js"
+      "presentational/(.*)$": "components/presentational/$1"
     },
     "transform": {
       ".*\\.(vue)$": "vue-jest",
-      ".*": "babel-jest"
+      "^.+\\.js$": "babel-jest",
+      "\\.(css|scss)$": "<rootDir>/internals/helpers/fileTransformer.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/helpers/fileTransformer.js"
     },
     "snapshotSerializers": [
       "jest-serializer-html"

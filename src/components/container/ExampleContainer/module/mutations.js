@@ -13,7 +13,7 @@
  *
  *    [YOUR_ACTION_CONSTANT](state, payload) {
  *      state.someVar = payload.var1;
- *      state.myVar = payload.var2;
+ *      state.anotherVar = payload.var2;
  *    }
  *
  */

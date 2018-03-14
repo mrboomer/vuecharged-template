@@ -85,24 +85,24 @@ describe('ExampleContainer Component', () => {
     const wrapper = shallow(ExampleContainerComponent, { store, localVue });
 
     // Rendered Locations
-    const h1Span = wrapper.find('h1 span');
     const h2Span = wrapper.find('h2 span');
+    const h3Span = wrapper.find('h3 span');
 
     // Assert Result
-    expect(h1Span.text()).toBe(state.name);
-    expect(h2Span.text()).toBe(state.count.toString());
+    expect(h2Span.text()).toBe(state.name);
+    expect(h3Span.text()).toBe(state.count.toString());
   });
 
   it('renders values from getters', () => {
     const wrapper = shallow(ExampleContainerComponent, { store, localVue });
 
     // Rendered Locations
-    const h3SpanFirst = wrapper.find('h3 span:first-of-type');
-    const h3SpanLast = wrapper.find('h3 span:last-of-type');
+    const h4SpanFirst = wrapper.find('h4 span:first-of-type');
+    const h4SpanLast = wrapper.find('h4 span:last-of-type');
 
     // Assert Results
-    expect(h3SpanFirst.text()).toBe(getters.positiveCount().toString());
-    expect(h3SpanLast.text()).toBe(getters.fibonacciNumber().toString());
+    expect(h4SpanFirst.text()).toBe(getters.positiveCount().toString());
+    expect(h4SpanLast.text()).toBe(getters.fibonacciNumber().toString());
   });
 
   it('renders to a nice snapshot', () => {

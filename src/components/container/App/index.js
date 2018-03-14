@@ -1,5 +1,6 @@
 /**
  * Root
+ *
  */
 
 import Header from 'presentational/Header';
@@ -17,7 +18,7 @@ export default {
   template: `
     <div id="app">
       <Header />
-      <!-- Components matched by the route will render here. -->
+      <!-- Components matched by a route will render here. -->
       <router-view />
       <Footer />
     </div>

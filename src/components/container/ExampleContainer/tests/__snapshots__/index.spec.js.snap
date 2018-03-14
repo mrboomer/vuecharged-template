@@ -6,52 +6,33 @@ exports[`ExampleContainer Component renders to a nice snapshot 1`] = `
          class="example-container"
 >
   <div class="container">
-    <h1 class="mt-5">
+    <img src="VueChargedLogo.png"
+         alt="VueCharged Logo"
+    >
+    <h2>
       Name:
       <span>
         John Doe
       </span>
-    </h1>
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span id="update-name"
-              class="input-group-text"
-        >
-          Update Name
-        </span>
-      </div>
-      <input type="text"
-             aria-describedby="update-name"
-             placeholder="John Doe"
-             class="form-control"
-      >
-    </div>
-  </div>
-  <div class="container">
-    <h2 class="mt-5">
+    </h2>
+    <input type="text"
+           placeholder="John Doe"
+    >
+    <h3>
       Count:
       <span>
         2
       </span>
-    </h2>
-    <div role="group"
-         aria-label="Basic example"
-         class="btn-group"
-    >
-      <button type="button"
-              class="btn btn-secondary"
-      >
+    </h3>
+    <div>
+      <button type="button">
         Decrement
       </button>
-      <button type="button"
-              class="btn btn-secondary"
-      >
+      <button type="button">
         Increment
       </button>
     </div>
-  </div>
-  <div class="container">
-    <h3 class="mt-5">
+    <h4>
       Fibonacci Number
       <span>
         2
@@ -60,7 +41,7 @@ exports[`ExampleContainer Component renders to a nice snapshot 1`] = `
       <span>
         1
       </span>
-    </h3>
+    </h4>
   </div>
 </section>
 

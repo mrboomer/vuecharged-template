@@ -1,5 +1,6 @@
 /**
  * Route Generator
+ *
  */
 
 const helpers = require('../helpers.js');

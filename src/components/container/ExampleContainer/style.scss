@@ -1,0 +1,28 @@
+.example-container {
+  display: block;
+
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  h2, h3, h4 {
+    text-align: center;
+  }
+
+  input {
+    display: block;
+    margin: 0 auto;
+  }
+
+  div {
+    text-align: center;
+  }
+}

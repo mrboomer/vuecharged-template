@@ -1,9 +1,16 @@
 /**
  * Example Container
+ *
  */
 
 import Vue from 'vue';
 import { createNamespacedHelpers } from 'vuex';
+
+// StyleSheet
+import './style.scss';
+
+// Images
+import logo from './images/VueChargedLogo.png';
 
 // Namespaced Helper
 const { mapState, mapGetters } = createNamespacedHelpers('exampleContainer');
@@ -37,29 +44,23 @@ export default Vue.component('ExampleContainer', {
   },
   template: `
     <section class="example-container">
-      <!-- Input Example -->
       <div class="container">
-        <h1 class="mt-5">Name: <span v-text="this.name"></span></h1>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="update-name">Update Name</span>
-          </div>
-          <input type="text" class="form-control" aria-describedby="update-name" :placeholder="this.name" @input="this.updateName">
-        </div>
-      </div>
+        <!-- Logo -->
+        <img src="${logo}" alt="VueCharged Logo" />
 
-      <!-- Counter Example -->
-      <div class="container">
-        <h2 class="mt-5">Count: <span v-text="this.count"></span></h2>
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-secondary" @click="this.decrement">Decrement</button>
-          <button type="button" class="btn btn-secondary" @click="this.increment">Increment</button>
-        </div>
-      </div>
+        <!-- Input Example -->
+        <h2>Name: <span v-text="this.name"></span></h2>
+        <input type="text" :placeholder="this.name" @input="this.updateName">
 
-      <!-- Getter Example -->
-      <div class="container">
-        <h3 class="mt-5">Fibonacci Number <span v-text="this.positiveCount"></span>: <span v-text="this.fibonacciNumber"></span></h3>
+        <!-- Counter Example -->
+        <h3>Count: <span v-text="this.count"></span></h3>
+        <div>
+          <button type="button" @click="this.decrement">Decrement</button>
+          <button type="button" @click="this.increment">Increment</button>
+        </div>
+
+        <!-- Getter Example -->
+        <h4>Fibonacci Number <span v-text="this.positiveCount"></span>: <span v-text="this.fibonacciNumber"></span></h4>
       </div>
     </section>
   `,

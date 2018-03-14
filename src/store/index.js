@@ -8,10 +8,10 @@
  *
  * Usage:
  *
- * 1. Add any new variables to the state. (state.js)
- * 2. Create a new mutation type. (constants.js)
- * 3. Create a new action. (actions.js)
- * 4. Create a new mutation. (mutations.js)
+ * 1. Add any new variables to the state. (./state.js)
+ * 2. Create a new mutation type. (./constants.js)
+ * 3. Create a new action. (./actions.js)
+ * 4. Create a new mutation. (./mutations.js)
  *
  */
 
@@ -25,7 +25,7 @@ import mutations from './mutations';
 import getters from './getters';
 
 // Modules
-import ExampleContainerModule from '../components/container/ExampleContainer/storeModule';
+import ExampleContainerModule from '../components/container/ExampleContainer/module';
 
 Vue.use(Vuex);
 

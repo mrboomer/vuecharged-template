@@ -1,5 +1,6 @@
 /**
- * PRODUCTION WEBPACK CONFIGURATION
+ * Production Webpack Configuration
+ *
  */
 
 const path = require('path');

@@ -1,5 +1,6 @@
 /**
- * BASE WEBPACK CONFIGURATION
+ * Base Webpack Configuration
+ *
  */
 
 const webpack = require('webpack');

@@ -1,5 +1,6 @@
 /**
- * DEVELOPMENT WEBPACK CONFIGURATION
+ * Development Webpack Configuration
+ *
  */
 
 const path = require('path');
