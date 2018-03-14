@@ -38,11 +38,16 @@ module.exports = {
     default: true,
   }],
   actions: (data) => {
-    // Generate index.js
+    // Generate index.js and index.spec.js
     const actions = [{
       type: 'add',
       path: '../../src/components/container/{{properCase name}}/index.js',
       templateFile: './container/index.js.hbs',
+      abortOnFail: true,
+    }, {
+      type: 'add',
+      path: '../../src/components/container/{{properCase name}}/tests/index.spec.js',
+      templateFile: './container/tests/index.spec.js.hbs',
       abortOnFail: true,
     }];
 
@@ -56,8 +61,8 @@ module.exports = {
       });
     }
 
-    // If they want actions and mutations, generate actions.js, constants.js,
-    // getters.js, and mutations.js
+    // If component wants actions and mutations, generate actions.js, constants.js,
+    // getters.js, mutations.js, and accompanying tests
     if (data.wantActionsAndMutations) {
       // Entry
       actions.push({
@@ -66,12 +71,24 @@ module.exports = {
         templateFile: './container/storeModule/index.js.hbs',
         abortOnFail: true,
       });
-
-      // Actions
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/storeModule/actions.js',
-        templateFile: './container/storeModule/actions.js.hbs',
+        path: '../../src/components/container/{{properCase name}}/storeModule/tests/index.spec.js',
+        templateFile: './container/storeModule/tests/index.spec.js.hbs',
+        abortOnFail: true,
+      });
+
+      // State
+      actions.push({
+        type: 'add',
+        path: '../../src/components/container/{{properCase name}}/storeModule/state.js',
+        templateFile: './container/storeModule/state.js.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'add',
+        path: '../../src/components/container/{{properCase name}}/storeModule/tests/state.spec.js',
+        templateFile: './container/storeModule/tests/state.spec.js.hbs',
         abortOnFail: true,
       });
 
@@ -83,11 +100,17 @@ module.exports = {
         abortOnFail: true,
       });
 
-      // Getters
+      // Actions
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/storeModule/getters.js',
-        templateFile: './container/storeModule/getters.js.hbs',
+        path: '../../src/components/container/{{properCase name}}/storeModule/actions.js',
+        templateFile: './container/storeModule/actions.js.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'add',
+        path: '../../src/components/container/{{properCase name}}/storeModule/tests/actions.spec.js',
+        templateFile: './container/storeModule/tests/actions.spec.js.hbs',
         abortOnFail: true,
       });
 
@@ -98,12 +121,24 @@ module.exports = {
         templateFile: './container/storeModule/mutations.js.hbs',
         abortOnFail: true,
       });
-
-      // State
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/storeModule/state.js',
-        templateFile: './container/storeModule/state.js.hbs',
+        path: '../../src/components/container/{{properCase name}}/storeModule/tests/mutations.spec.js',
+        templateFile: './container/storeModule/tests/mutations.spec.js.hbs',
+        abortOnFail: true,
+      });
+
+      // Getters
+      actions.push({
+        type: 'add',
+        path: '../../src/components/container/{{properCase name}}/storeModule/getters.js',
+        templateFile: './container/storeModule/getters.js.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'add',
+        path: '../../src/components/container/{{properCase name}}/storeModule/tests/getters.spec.js',
+        templateFile: './container/storeModule/tests/getters.spec.js.hbs',
         abortOnFail: true,
       });
     }
