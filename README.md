@@ -1,6 +1,9 @@
-<h1 align="center">VueCharged Template</h1>
-
-<br />
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/mrboomer/vuecharged-template/master/src/components/container/ExampleContainer/images/VueChargedLogo.png" alt="VueCharged Logo" />
+  <br />
+  VueCharged Template
+  <br />
+</h1>
 
 <p align="center">
   An opinionated Vue 2.0 starter template with CLI scaffolding superpowers.
