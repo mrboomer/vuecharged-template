@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/mrboomer/vuecharged-template/master/src/components/container/ExampleContainer/images/VueChargedLogo.png" alt="VueCharged Logo" />
+  <img src="https://raw.githubusercontent.com/mrboomer/vuecharged-template/master/src/components/container/ExampleContainer/images/VueChargedLogo.png" alt="VueCharged Logo" width="256" />
   <br />
   VueCharged Template
   <br />
