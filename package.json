@@ -1,6 +1,6 @@
 {
   "name": "vuecharged-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An opinionated Vue 2.0 starter template with CLI scaffolding superpowers.",
   "main": "src/index.js",
   "scripts": {

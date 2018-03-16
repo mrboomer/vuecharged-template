@@ -19,20 +19,20 @@ module.exports = require('./webpack.base.config')({
   // Utilize long-term caching by adding content hashes (not compilation hashes) to compiled assets
   output: {
     publicPath: './',
-    path: path.resolve(process.cwd(), 'dist'),
+    path: path.resolve(process.cwd(), 'build'),
     filename: 'assets/js/[name].[chunkhash].js',
     chunkFilename: 'assets/js/[name].[chunkhash].chunk.js',
   },
 
   plugins: [
-    new CleanWebpackPlugin(['dist'], {
+    new CleanWebpackPlugin(['build'], {
       root: process.cwd(),
     }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
         from: path.resolve(process.cwd(), 'src/static'),
-        to: path.resolve(process.cwd(), 'dist/'),
+        to: path.resolve(process.cwd(), 'build/'),
         ignore: ['.*'],
       },
     ]),

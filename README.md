@@ -69,7 +69,7 @@ Run the following command to build your project.
 npm run build
 ```
 
-All production-ready files can be found in the `dist` folder after running this command.
+All production-ready files can be found in the `build` folder after running this command.
 
 ## License
 
