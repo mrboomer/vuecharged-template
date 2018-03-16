@@ -32,28 +32,25 @@
 
 ## Key Features
 
-* Centralized State Management
-  - Keeping your state predictable the first time, every time.
+<dl>
+  <dt>Centralized State Management</dt>
+  <dd>Keeping your state predictable the first time, every time.</dd>
 
+  <dt>Simple Request Routing</dt>
+  <dd>Adding pages to your application has never been easier.</dd>
 
-* Simple Request Routing
-  - Adding pages to your application has never been easier.
+  <dt>Beautiful Stylesheets</dt>
+  <dd>...using Sassy CSS. All properly formatted CSS is valid Sass!</dd>
 
+  <dt>Scaffolding Superpowers</dt>
+  <dd>Create components, views, and routes right from the CLI.</dd>
 
-* Beautiful Stylesheets
-  - ...using Sassy CSS. All properly formatted CSS is valid Sass!
+  <dt>Offline First</dt>
+  <dd>Users can use your app in the middle of nowhere. No internet required!</dd>
 
-
-* Scaffolding Superpowers
-  - Create components, views, and routes right from the CLI.
-
-
-* Offline First
-  - Users can use your app in the middle of nowhere. No internet required!
-
-
-* "Delightful" Testing
-  - As much as you don't want to do this, you need it. It's all set up and ready for you.
+  <dt>"Delightful" Testing</dt>
+  <dd>As much as you don't want to do this, you need it. It's all set up and ready for you.</dd>
+</dl>
 
 
 ## Getting Started
