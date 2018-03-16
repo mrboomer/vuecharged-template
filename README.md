@@ -11,24 +11,50 @@
 
 <div align="center">
   <!-- Build Status -->
-  <a href="https://travis-ci.org/mrboomer/vue-template">
-    <img src="https://img.shields.io/travis/mrboomer/vue-template/master.svg" alt="Build Status" />
+  <a href="https://travis-ci.org/mrboomer/vuecharged-template">
+    <img src="https://img.shields.io/travis/mrboomer/vuecharged-template/master.svg" alt="Build Status" />
   </a>
   <!-- Test Coverage -->
-  <a href="https://coveralls.io/github/mrboomer/vue-template?branch=master">
-    <img src="https://img.shields.io/coveralls/github/mrboomer/vue-template/master.svg" alt="Test Coverage" />
+  <a href="https://coveralls.io/github/mrboomer/vuecharged-template?branch=master">
+    <img src="https://img.shields.io/coveralls/github/mrboomer/vuecharged-template/master.svg" alt="Test Coverage" />
   </a>
   <!-- Dependency Status -->
-  <a href="https://david-dm.org/mrboomer/vue-template">
-    <img src="https://img.shields.io/david/mrboomer/vue-template.svg" alt="Dependency Status" />
+  <a href="https://david-dm.org/mrboomer/vuecharged-template">
+    <img src="https://img.shields.io/david/mrboomer/vuecharged-template.svg" alt="Dependency Status" />
   </a>
   <!-- devDependency Status -->
-  <a href="https://david-dm.org/mrboomer/vue-template?type=dev">
-    <img src="https://img.shields.io/david/dev/mrboomer/vue-template.svg" alt="devDependency Status" />
+  <a href="https://david-dm.org/mrboomer/vuecharged-template?type=dev">
+    <img src="https://img.shields.io/david/dev/mrboomer/vuecharged-template.svg" alt="devDependency Status" />
   </a>
 </div>
 
 <br />
+
+## Key Features
+
+* Centralized State Management
+  - Keeping your state predictable the first time, every time.
+
+
+* Simple Request Routing
+  - Adding pages to your application has never been easier.
+
+
+* Beautiful Stylesheets
+  - ...using Sassy CSS. All properly formatted CSS is valid Sass!
+
+
+* Scaffolding Superpowers
+  - Create components, views, and routes right from the CLI.
+
+
+* Offline First
+  - Users can use your app in the middle of nowhere. No internet required!
+
+
+* "Delightful" Testing
+  - As much as you don't want to do this, you need it. It's all set up and ready for you.
+
 
 ## Getting Started
 
