@@ -1,6 +1,5 @@
 /**
  * View Generator
- *
  */
 
 const helpers = require('../helpers.js');

@@ -15,7 +15,6 @@
  *      state.someVar = payload.var1;
  *      state.anotherVar = payload.var2;
  *    }
- *
  */
 
 import {

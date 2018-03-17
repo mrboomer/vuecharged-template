@@ -1,6 +1,5 @@
 /**
  * Production Webpack Configuration
- *
  */
 
 const path = require('path');
@@ -13,7 +12,7 @@ const OfflinePlugin = require('offline-plugin');
 module.exports = require('./webpack.base.config')({
   // In production, we skip all hot-reloading stuff
   entry: [
-    path.join(process.cwd(), 'src/index.js'),
+    path.join(process.cwd(), 'src/main.js'),
   ],
 
   // Utilize long-term caching by adding content hashes (not compilation hashes) to compiled assets

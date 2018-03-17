@@ -1,6 +1,5 @@
 /**
  * Generator Helpers
- *
  */
 
 const fs = require('fs');

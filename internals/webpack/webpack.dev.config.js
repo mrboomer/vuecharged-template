@@ -1,6 +1,5 @@
 /**
  * Development Webpack Configuration
- *
  */
 
 const path = require('path');
@@ -12,7 +11,7 @@ module.exports = require('./webpack.base.config')({
   // Add hot reloading in development
   entry: [
     'eventsource-polyfill', // Necessary for hot reloading with IE
-    path.join(process.cwd(), 'src/index.js'),
+    path.join(process.cwd(), 'src/main.js'),
   ],
 
   // Don't use hashes in dev mode for better performance
@@ -27,6 +26,7 @@ module.exports = require('./webpack.base.config')({
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // Tell webpack we want hot reloading
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
+    new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -91,7 +91,11 @@ module.exports = require('./webpack.base.config')({
   // devServer options
   devServer: {
     clientLogLevel: 'warning',
-    historyApiFallback: true,
+    historyApiFallback: {
+      rewrites: [
+        { from: /.*/, to: '/index.html' },
+      ],
+    },
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
     compress: true,

@@ -2,7 +2,6 @@
  * Generators
  *
  * Further Reading: https://github.com/amwmedia/plop
- *
  */
 
 const presentationalGenerator = require('./presentational/index.js');

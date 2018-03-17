@@ -5,7 +5,6 @@
  * You can think of getters as computed properties for data in this module.
  *
  * Further Reading: https://vuex.vuejs.org/en/getters.html
- *
  */
 
 const getters = {

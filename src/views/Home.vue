@@ -9,6 +9,7 @@
 const ExampleContainer = () => import('container/ExampleContainer');
 
 export default {
+  name: 'Home',
   components: {
     ExampleContainer,
   },

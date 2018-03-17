@@ -17,7 +17,6 @@
  *        var2: payload.var2,
  *      });
  *    },
- *
  */
 
 import {

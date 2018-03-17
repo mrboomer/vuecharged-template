@@ -1,6 +1,5 @@
 /**
  * Presentational Generator
- *
  */
 
 const helpers = require('../helpers.js');

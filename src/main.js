@@ -1,6 +1,5 @@
 /**
- * App Entry
- *
+ * Entry
  */
 
 import Vue from 'vue';

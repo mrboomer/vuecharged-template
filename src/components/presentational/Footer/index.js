@@ -1,6 +1,5 @@
 /**
  * Footer
- *
  */
 
 import Vue from 'vue';

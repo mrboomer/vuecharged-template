@@ -11,7 +11,6 @@
  *
  * Follow this format:
  * export const YOUR_ACTION_CONSTANT = 'YOUR_ACTION_CONSTANT';
- *
  */
 
 export const UPDATE_NAME = 'UPDATE_NAME';

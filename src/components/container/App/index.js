@@ -1,6 +1,5 @@
 /**
- * Root
- *
+ * App
  */
 
 import Header from 'presentational/Header';
@@ -10,6 +9,7 @@ import Footer from 'presentational/Footer';
 import './style.scss';
 
 export default {
+  name: 'App',
   el: '#app',
   components: {
     Header,
@@ -18,7 +18,6 @@ export default {
   template: `
     <div id="app">
       <Header />
-      <!-- Components matched by a route will render here. -->
       <router-view />
       <Footer />
     </div>

@@ -1,6 +1,5 @@
 /**
  * Header
- *
  */
 
 import Vue from 'vue';

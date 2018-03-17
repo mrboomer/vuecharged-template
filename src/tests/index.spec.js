@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import app from '../index';
+import app from '../main';
 
 describe('App', () => {
   it('configured correctly', () => {

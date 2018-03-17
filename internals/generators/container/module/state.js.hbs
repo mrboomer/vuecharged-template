@@ -4,7 +4,6 @@
  * This single object contains all the component level state.
  *
  * Further Reading: https://vuex.vuejs.org/en/state.html
- *
  */
 
 const state = {

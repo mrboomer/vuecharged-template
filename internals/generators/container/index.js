@@ -1,6 +1,5 @@
 /**
  * Container Generator
- *
  */
 
 const helpers = require('../helpers.js');

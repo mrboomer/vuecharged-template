@@ -1,6 +1,5 @@
 /**
  * Example Container
- *
  */
 
 import Vue from 'vue';

@@ -2,7 +2,6 @@
  * File Transformer for Jest
  *
  * Further Reading: https://facebook.github.io/jest/docs/en/webpack.html
- *
  */
 
 const path = require('path');

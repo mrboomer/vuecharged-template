@@ -7,7 +7,6 @@
  * 2. Create a new mutation type. (./constants.js)
  * 3. Create a new action. (./actions.js)
  * 4. Create a new mutation. (./mutations.js)
- *
  */
 
 import state from './state';

@@ -1,10 +1,7 @@
 /**
  * Router
  *
- * This creates and mounts the root instance.
- *
  * Further Reading: https://router.vuejs.org/en/
- *
  */
 
 import Vue from 'vue';
