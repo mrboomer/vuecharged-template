@@ -33,26 +33,26 @@
 ## Key Features
 
 <dl>
-  <dt>Centralized State Management</dt>
-  <dd>Keeping your state predictable the first time, every time.</dd>
+  <dt>Scaffolding Superpowers</dt>
+  <dd>Create components, views, and routes right from the CLI.</dd>
 
   <dt>Simple Request Routing</dt>
   <dd>Adding pages to your application has never been easier.</dd>
 
+  <dt>Centralized State Management</dt>
+  <dd>Keeping your state predictable the first time, every time.</dd>
+
   <dt>Beautiful Stylesheets</dt>
   <dd>...using Sassy CSS. All properly formatted CSS is valid Sass!</dd>
-
-  <dt>Scaffolding Superpowers</dt>
-  <dd>Create components, views, and routes right from the CLI.</dd>
-
-  <dt>Offline First</dt>
-  <dd>Users can use your app in the middle of nowhere. No internet required!</dd>
 
   <dt>Live Development</dt>
   <dd>Lightning fast development changes after every save! No state loss either!</dd>
 
+  <dt>Offline First</dt>
+  <dd>Users can use your app in the middle of nowhere. No internet required!</dd>
+
   <dt>"Delightful" Testing</dt>
-  <dd>As much as you don't want to do this, you need it. It's all set up and ready for you.</dd>
+  <dd>As much as you don't want it, you need it. But it's all set up and ready for you.</dd>
 </dl>
 
 
