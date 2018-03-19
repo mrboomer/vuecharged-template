@@ -121,14 +121,21 @@ const webpackConfig = merge(baseWebpackConfig, {
     // OfflinePlugin is placed last to capture all the HtmlWebpackPlugin's
     // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
     new OfflinePlugin({
+      publicPath: '/',
+      caches: {
+        main: [
+          'assets/css/app.*.css',
+          'assets/js/app.*.js',
+        ],
+      },
+      externals: [
+        '/',
+      ],
       ServiceWorker: {
         output: 'assets/js/sw.js',
+        navigateFallbackURL: '/',
       },
-
-      // No need to cache .htaccess. See http://mxs.is/googmp,
-      // this is applied before any match in `caches` section
       excludes: ['.htaccess'],
-
       AppCache: false,
     }),
   ],
