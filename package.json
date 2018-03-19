@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "An opinionated Vue 2.0 template with CLI scaffolding superpowers.",
   "author": "Daniel Escobedo <daniel@escobedo.io>",
-  "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config internals/webpack/webpack.dev.conf.js",
     "start": "npm run dev",
