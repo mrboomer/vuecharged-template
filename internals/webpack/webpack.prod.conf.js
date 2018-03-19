@@ -9,6 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -109,7 +110,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       children: true,
       minChunks: 3,
     }),
-
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -118,6 +118,19 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*'],
       },
     ]),
+    // OfflinePlugin is placed last to capture all the HtmlWebpackPlugin's
+    // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
+    new OfflinePlugin({
+      ServiceWorker: {
+        output: 'assets/js/sw.js',
+      },
+
+      // No need to cache .htaccess. See http://mxs.is/googmp,
+      // this is applied before any match in `caches` section
+      excludes: ['.htaccess'],
+
+      AppCache: false,
+    }),
   ],
 });
 

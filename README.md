@@ -45,6 +45,9 @@
   <dt>Scaffolding Superpowers</dt>
   <dd>Create components, views, and routes right from the CLI.</dd>
 
+  <dt>Offline First</dt>
+  <dd>Users can use your app in the middle of nowhere. No internet required!</dd>
+
   <dt>"Delightful" Testing</dt>
   <dd>As much as you don't want to do this, you need it. It's all set up and ready for you.</dd>
 </dl>

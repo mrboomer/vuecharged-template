@@ -22,4 +22,12 @@ const app = new Vue({
   template: '<App/>',
 });
 
+// Install ServiceWorker at the end since it's not most
+// important operation and if main code fails, we do not
+// want it installed
+/* istanbul ignore next */
+if (process.env.NODE_ENV === 'production') {
+  require('offline-plugin/runtime').install(); // eslint-disable-line global-require
+}
+
 export default app;
