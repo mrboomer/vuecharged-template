@@ -1,0 +1,32 @@
+<template>
+  <section class="{{dashCase name}}">
+    <span>{{titleCase name}}</span>
+  </section>
+</template>
+
+<script>
+{{#if wantActionsAndMutations}}
+import { createNamespacedHelpers } from 'vuex';
+
+// Namespaced Helper
+const { mapState, mapGetters } = createNamespacedHelpers('{{camelCase name}}');
+
+{{/if}}
+export default {
+  name: '{{properCase name}}',
+{{#if wantActionsAndMutations}}
+  computed: {
+    ...mapState({
+
+    }),
+    ...mapGetters([
+
+    ]),
+  },
+{{/if}}
+};
+</script>
+
+<style lang="scss" scoped>
+
+</style>

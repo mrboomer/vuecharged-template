@@ -32,7 +32,7 @@ module.exports = {
   },
   viewImportExists(view) {
     const formattedView = toTitleCase(view);
-    const viewImport = `const ${formattedView} = () => import('views/${formattedView}');`;
+    const viewImport = `const ${formattedView} = () => import('@/views/${formattedView}');`;
     const fileData = fs.readFileSync(path.join(__dirname, '../../src/router/routes.js'));
     if (fileData.indexOf(viewImport) >= 0) {
       return true;

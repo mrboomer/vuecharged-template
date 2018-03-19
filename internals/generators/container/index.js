@@ -20,11 +20,6 @@ module.exports = {
     },
   }, {
     type: 'confirm',
-    name: 'wantStyleSheet',
-    default: true,
-    message: 'Do you want a stylesheet for this container?',
-  }, {
-    type: 'confirm',
     name: 'wantActionsAndMutations',
     default: true,
     message: 'Do you want actions/constants/getters/mutations module for this container?',
@@ -38,11 +33,11 @@ module.exports = {
     default: true,
   }],
   actions: (data) => {
-    // Generate index.js and index.spec.js
+    // Generate index.vue and index.spec.js
     const actions = [{
       type: 'add',
-      path: '../../src/components/container/{{properCase name}}/index.js',
-      templateFile: './container/index.js.hbs',
+      path: '../../src/components/container/{{properCase name}}/index.vue',
+      templateFile: './container/index.vue.hbs',
       abortOnFail: true,
     }, {
       type: 'add',
@@ -50,16 +45,6 @@ module.exports = {
       templateFile: './container/tests/index.spec.js.hbs',
       abortOnFail: true,
     }];
-
-    // If component wants a stylesheet
-    if (data.wantStyleSheet) {
-      actions.push({
-        type: 'add',
-        path: '../../src/components/container/{{properCase name}}/style.scss',
-        templateFile: './container/style.scss.hbs',
-        abortOnFail: true,
-      });
-    }
 
     // If component wants actions and mutations, generate actions.js, constants.js,
     // getters.js, mutations.js, and accompanying tests
@@ -148,7 +133,7 @@ module.exports = {
       actions.push({
         type: 'modify',
         path: '../../src/store/index.js',
-        pattern: /(\/\/\sModules[\s\S]*Module')(;\s\nVue[\s\S]*Module,)/,
+        pattern: /(\/\/\sModules[\s\S]*module')(;\s\nVue[\s\S]*Module,)/,
         template: helpers.trimTemplateFile('./container/store.hbs'),
       });
     }

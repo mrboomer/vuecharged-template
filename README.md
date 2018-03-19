@@ -45,9 +45,6 @@
   <dt>Scaffolding Superpowers</dt>
   <dd>Create components, views, and routes right from the CLI.</dd>
 
-  <dt>Offline First</dt>
-  <dd>Users can use your app in the middle of nowhere. No internet required!</dd>
-
   <dt>"Delightful" Testing</dt>
   <dd>As much as you don't want to do this, you need it. It's all set up and ready for you.</dd>
 </dl>
@@ -56,14 +53,6 @@
 ## Getting Started
 
 These instructions will get you a copy of this template up and running on your local machine for development.
-
-### Prerequisites
-
-This template uses Sass, which has a Ruby dependency. If you're using a Mac, Ruby comes pre-installed. You can skip this if you have already installed Sass on your system.
-
-```
-gem install sass
-```
 
 ### Installing
 

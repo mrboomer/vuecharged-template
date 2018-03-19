@@ -18,18 +18,13 @@ module.exports = {
 
       return 'The name is required';
     },
-  }, {
-    type: 'confirm',
-    name: 'wantStyleSheet',
-    default: true,
-    message: 'Do you want a stylesheet for this container?',
   }],
-  actions: (data) => {
-    // Generate index.js and index.spec.js
+  actions: () => {
+    // Generate index.vue and index.spec.js
     const actions = [{
       type: 'add',
-      path: '../../src/components/presentational/{{properCase name}}/index.js',
-      templateFile: './presentational/index.js.hbs',
+      path: '../../src/components/presentational/{{properCase name}}/index.vue',
+      templateFile: './presentational/index.vue.hbs',
       abortOnFail: true,
     }, {
       type: 'add',
@@ -37,16 +32,6 @@ module.exports = {
       templateFile: './presentational/tests/index.spec.js.hbs',
       abortOnFail: true,
     }];
-
-    // If component wants a stylesheet
-    if (data.wantStyleSheet) {
-      actions.push({
-        type: 'add',
-        path: '../../src/components/presentational/{{properCase name}}/style.scss',
-        templateFile: './presentational/style.scss.hbs',
-        abortOnFail: true,
-      });
-    }
 
     return actions;
   },

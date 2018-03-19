@@ -24,7 +24,7 @@ import mutations from './mutations';
 import getters from './getters';
 
 // Modules
-import ExampleContainerModule from '../components/container/ExampleContainer/module';
+import ExampleModule from '../components/container/Example/module';
 
 Vue.use(Vuex);
 
@@ -35,7 +35,7 @@ const store = new Vuex.Store({
   mutations,
   getters,
   modules: {
-    exampleContainer: ExampleContainerModule,
+    example: ExampleModule,
   },
 });
 

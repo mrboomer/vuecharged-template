@@ -1,3 +1,5 @@
+// https://eslint.org/docs/user-guide/configuring
+
 module.exports = {
   root: true,
   parserOptions: {
@@ -6,21 +8,23 @@ module.exports = {
   env: {
     browser: true,
   },
+  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
   extends: ['plugin:vue/recommended', 'airbnb-base', 'plugin:jest/recommended'],
   // required to lint *.vue files
   plugins: [
-    'vue',
+    'vue'
   ],
   // check if imports actually resolve
   settings: {
     'import/resolver': {
       webpack: {
-        config: 'internals/webpack/webpack.dev.config.js'
+        config: 'internals/webpack/webpack.base.conf.js'
       }
     }
   },
+  // add your custom rules here
   rules: {
-    // don't require .vue/.css/.scss extensions when importing
+    // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
       vue: 'never'
@@ -34,6 +38,10 @@ module.exports = {
         'acc', // for reduce accumulators
         'e' // for e.returnvalue
       ]
+    }],
+    // allow optionalDependencies
+    'import/no-extraneous-dependencies': ['error', {
+      optionalDependencies: ['test/unit/index.js']
     }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',

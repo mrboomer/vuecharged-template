@@ -1,17 +1,21 @@
 <template>
   <main>
-    <ExampleContainer />
+    <Example />
   </main>
 </template>
 
 <script>
 // Lazy Load Components
-const ExampleContainer = () => import('container/ExampleContainer');
+const Example = () => import('@/components/container/Example');
 
 export default {
   name: 'Home',
   components: {
-    ExampleContainer,
+    Example,
   },
 };
 </script>
+
+<style lang="scss" scoped>
+
+</style>
