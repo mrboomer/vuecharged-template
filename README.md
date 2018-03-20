@@ -59,38 +59,70 @@
 </dl>
 
 
+## VueCharged!
+
+Guarantee component reusability with this feature first Vue template. Every component created is independently owned and operated. All of its logic, state, styles, and tests live together under one roof as one big happy family. Don't fret! You won't be concerning yourself with this structure at all, as this can all be generated automatically with a few keystrokes. You just worry about building the best app ever.
+
+
 ## Getting Started
 
-These instructions will get you a copy of this template up and running on your local machine for development.
+It's as easy as 1, 2, 3.
 
-### Installing
+### 1. Clone It
 
-```
-npm install
-```
-
-### Development
-
-```
-npm start
+```sh
+$ git clone https://github.com/mrboomer/vuecharged-template.git my-vuecharged-app
+$ cd my-vuecharged-app
 ```
 
-### Generators
-Automate your workflow and put less time and thought into adding container/presentational components, routes, and views by auto-generating them. You can also run `npm run generate <part>` to skip the first selection. (e.g. `npm run generate container`)
+### 2. Install It
 
+```sh
+$ npm install
 ```
-npm run generate
+
+### 3. Develop It
+
+```sh
+$ npm start
 ```
 
 ## Deployment
 
 Run the following command to build your project.
 
+```sh
+$ npm run build
 ```
-npm run build
+All production-ready files can be found in the `build` folder.
+
+
+## Documentation
+
+- [Introduction](#introduction)
+- [Generators](#generators)
+
+
+## Introduction
+
+This template is highly opinionated, to help with scaling large apps and follow industry best practices. As people develop more, they find better ways to do certain things. This Vue template hopes to encapsulate some popular accepted ideas and patterns from the many who have found better ways of doing things.
+
+This project is primarily built around:
+
+- vuex
+- vue-router
+
+
+## Generators
+
+Focus on writing code and automatically generate your container/presentational components, views, and routes.
+
+```sh
+$ npm run generate
 ```
 
-All production-ready files can be found in the `build` folder after running this command.
+You can also run `npm run generate <part>` to skip the first selection. (e.g. `npm run generate container`)
+
 
 ## License
 
