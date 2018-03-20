@@ -135,7 +135,7 @@ All your developmental concerns should live in the `src` folder. Breaking that d
 
 ### `./src/components`
 
-THe bulk of your work will reside here. The components folder is split up into two subfolders to help differentiate the type of component you write.
+The bulk of your work will reside here. The components folder is split up into two subfolders to help differentiate the type of component you write.
 
 The `container` folder should contain components that are concerned with _how things work_.
 
