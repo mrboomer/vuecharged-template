@@ -94,12 +94,14 @@ Run the following command to build your project.
 ```sh
 $ npm run build
 ```
-All production-ready files can be found in the `build` folder.
+
+All compiled files can be found in the `build` folder.
 
 
 ## Documentation
 
 - [Introduction](#introduction)
+- [Structure](#structure)
 - [Generators](#generators)
 
 
@@ -112,6 +114,36 @@ This project is primarily built around:
 - vuex
 - vue-router
 
+
+## Structure
+
+All your developmental concerns should live in the `src` folder. Breaking that down we end up with this structure below.
+
+    .
+    ├── src
+    │   ├── components
+    │   │   ├── container            # "how things work" components
+    │   │   ├── presentational       # "how things look" components
+    │   ├── router
+    │   ├── static
+    │   ├── store
+    │   ├── tests
+    │   ├── views
+    │   ├── index.html
+    │   └── main.js
+    └── ...
+
+### `./src/components`
+
+THe bulk of your work will reside here. The components folder is split up into two subfolders to help differentiate the type of component you write.
+
+The `container` folder should contain components that are concerned with _how things work_.
+
+The `presentational` folder should contain components that are concerned with _how things look_.
+
+This is intentional to help separate the types of components that are created. For example, this should help with identifying components that have logic and state in them (containers), vs components that only render things like headers, footers, etc. (presentational).
+
+I would encourage you to [read this article](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) by Dan Abramov to help you better understand the distinction between container and presentational components.
 
 ## Generators
 
