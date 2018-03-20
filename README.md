@@ -6,7 +6,7 @@
 </h1>
 
 <p align="center">
-  An opinionated Vue 2.0 starter template with CLI scaffolding superpowers.
+  An opinionated feature-first Vue 2.0 template with CLI scaffolding superpowers.
 </p>
 
 <div align="center">
@@ -33,6 +33,9 @@
 ## Key Features
 
 <dl>
+  <dt>Features First!</dt>
+  <dd>Each component created is its own application that functions in isolation.</dd>
+
   <dt>Scaffolding Superpowers</dt>
   <dd>Create components, views, and routes right from the CLI.</dd>
 

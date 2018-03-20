@@ -1,7 +1,7 @@
 {
   "name": "vuecharged-template",
   "version": "1.0.0",
-  "description": "An opinionated Vue 2.0 template with CLI scaffolding superpowers.",
+  "description": "An opinionated feature-first Vue 2.0 template with CLI scaffolding superpowers.",
   "author": "Daniel Escobedo <daniel@escobedo.io>",
   "license": "MIT",
   "repository": {
