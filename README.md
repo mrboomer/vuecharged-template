@@ -107,7 +107,7 @@ All compiled files can be found in the `build` folder.
 
 ## Introduction
 
-This template is highly opinionated, to help with scaling large apps and follow industry best practices. As people develop more, they find better ways to do certain things. This Vue template hopes to encapsulate some popular accepted ideas and patterns from the many who have found better ways of doing things.
+This template is highly opinionated to help with scaling large apps and follow industry best practices. As people develop more, they find better ways to do certain things. This Vue template hopes to encapsulate some popular accepted ideas and patterns from the many who have found better ways of doing things.
 
 This project is primarily built around:
 
@@ -117,7 +117,7 @@ This project is primarily built around:
 
 ## Structure
 
-All your developmental concerns should live in the `src` folder. Breaking that down we end up with this structure below.
+All your developmental concerns should live in the `src` folder. Here is a high-level structure highlighting the parts that are important to you:
 
     .
     ├── src
@@ -125,12 +125,15 @@ All your developmental concerns should live in the `src` folder. Breaking that d
     │   │   ├── container            # "how things work" components
     │   │   ├── presentational       # "how things look" components
     │   ├── router
-    │   ├── static
-    │   ├── store
-    │   ├── tests
-    │   ├── views
-    │   ├── index.html
-    │   └── main.js
+    │   │   ├── routes.js            # add "view" routes here
+    │   │   └── ...
+    │   ├── static                   # static files/directories go here
+    │   ├── store                    # global state goes here
+    │   │   ├── index.js             # add store component modules here
+    │   │   └── ...
+    │   ├── views                    # "view" components
+    │   ├── index.html               # add any global libraries/scripts here
+    │   └── ...
     └── ...
 
 ### `./src/components`
@@ -145,15 +148,49 @@ This is intentional to help separate the types of components that are created. F
 
 I would encourage you to [read this article](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) by Dan Abramov to help you better understand the distinction between container and presentational components.
 
+You can automatically create container components from the command line by running `npm run generate container`, and create presentational components with `npm run generate presentational`.
+
+### `./src/router/routes.js`
+
+If you want a webpage that goes to `https://mywebsite.com/about`, this is where you create it. Basically, your "view" page routes should be added here.
+
+You can automate this from the command line by running `npm run generate route`.
+
+Routes can only be created from view components. See "./src/view" section below.
+
+### `./src/static`
+
+This is where you add individual files or entire directories that you want to be copied over to the build directory. Sometimes you have external assets that just need to be included in your app, so this is where you add them.
+
+### `./src/store`
+
+Our store is divided into modules per component. While you should keep all your logic encapsulated within each component, sometimes there exists a need for global state. This is where that logic should live.
+
+### `./src/store/index.js`
+
+Your component store modules need to be added to this file to be included into the store. This can be automatically done if you use the CLI generators to build your components.
+
+### `./src/views`
+
+Separating your components between container and presentational types is not enough. While it helps you quickly figure out what type of component it is, it doesn't tell you if it's connected to a route.
+
+Think of these "view" components as web page containers. They contain a collection of components that make up a route. This way you know which components belong to a certain page.
+
+Limit what you do in these components to stylistic edits. The bulk of the view component's concern should just be including container/presentational components created in the `components` folder.
+
+You can automatically create view components from the command line by running `npm run generate view`.
+
+### `./src/index.html`
+
+The entry point of our app. This is where you can add anything that needs to be globally included like tracking pixels, custom scripts, etc.
+
 ## Generators
 
-Focus on writing code and automatically generate your container/presentational components, views, and routes.
+Focus on writing code and automatically generate all your container/presentational components, views, and routes.
 
 ```sh
 $ npm run generate
 ```
-
-You can also run `npm run generate <part>` to skip the first selection. (e.g. `npm run generate container`)
 
 
 ## License
