@@ -5,7 +5,7 @@ import {
   DECREMENT,
 } from '../constants';
 
-describe('Example Mutations', () => {
+describe('Demo Mutations', () => {
   it(UPDATE_NAME, () => {
     // Mock State/payload
     const state = { name: '' };

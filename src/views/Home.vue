@@ -1,17 +1,17 @@
 <template>
   <main>
-    <Example />
+    <Demo />
   </main>
 </template>
 
 <script>
 // Lazy Load Components
-const Example = () => import('@/components/container/Example');
+const Demo = () => import('@/components/container/Demo');
 
 export default {
   name: 'Home',
   components: {
-    Example,
+    Demo,
   },
 };
 </script>

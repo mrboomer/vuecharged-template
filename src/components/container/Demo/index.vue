@@ -1,5 +1,5 @@
 <template>
-  <section class="example">
+  <section class="demo">
     <div class="container">
       <!-- Logo -->
       <img
@@ -26,6 +26,14 @@
 
       <!-- Getter Example -->
       <h4>Fibonacci Number <span v-text="positiveCount" />: <span v-text="fibonacciNumber" /></h4>
+
+      <!-- Async Example -->
+      <p>
+        Current Reddit Top Post:
+        <a
+          :href="redditTopPostUrl"
+          target="_blank"><span v-text="redditTopPostTitle" /></a>
+      </p>
     </div>
   </section>
 </template>
@@ -34,10 +42,10 @@
 import { createNamespacedHelpers } from 'vuex';
 
 // Namespaced Helper
-const { mapState, mapGetters } = createNamespacedHelpers('example');
+const { mapState, mapGetters } = createNamespacedHelpers('demo');
 
 export default {
-  name: 'Example',
+  name: 'Demo',
   computed: {
     ...mapState({
       name: (state) => state.name,
@@ -46,7 +54,12 @@ export default {
     ...mapGetters([
       'positiveCount',
       'fibonacciNumber',
+      'redditTopPostTitle',
+      'redditTopPostUrl',
     ]),
+  },
+  mounted() {
+    this.$store.dispatch('demo/getRedditPosts');
   },
   methods: {
     updateName(e) {
@@ -55,41 +68,40 @@ export default {
         name: nameInputed || 'John Doe',
       };
 
-      this.$store.dispatch('example/updateName', payload);
+      this.$store.dispatch('demo/updateName', payload);
     },
     increment() {
-      this.$store.dispatch('example/incrementCounter');
+      this.$store.dispatch('demo/incrementCounter');
     },
     decrement() {
-      this.$store.dispatch('example/decrementCounter');
+      this.$store.dispatch('demo/decrementCounter');
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.demo {
+  margin-bottom: 20px;
+}
+
 .container {
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 h2, h3, h4 {
-  text-align: center;
+  margin-top: 20px;
 }
 
-input {
-  display: block;
-  margin: 0 auto;
+p {
+  font-weight: 600;
 }
 
-div {
-  text-align: center;
+a {
+  font-weight: 400;
+  text-decoration: none;
+  color: #35485d;
 }
 </style>

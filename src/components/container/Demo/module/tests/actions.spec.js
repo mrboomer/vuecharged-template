@@ -5,7 +5,7 @@ import {
   DECREMENT,
 } from '../constants';
 
-describe('Example Actions', () => {
+describe('Demo Actions', () => {
   it('updateName', () => {
     // Mock Payload
     const mockPayload = { name: 'John Doe' };

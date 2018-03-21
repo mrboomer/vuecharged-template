@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Example Component renders to a nice snapshot 1`] = `
-<section class="example">
+exports[`Demo Component renders to a nice snapshot 1`] = `
+<section class="demo">
     <div class="container">
         <img src="./img/VueChargedLogo.png" alt="VueCharged Logo">
         <h2>Name: <span>John Doe</span></h2>
@@ -12,6 +12,10 @@ exports[`Example Component renders to a nice snapshot 1`] = `
             <button type="button">Increment</button>
         </div>
         <h4>Fibonacci Number <span>2</span>: <span>1</span></h4>
+        <p>
+            Current Reddit Top Post:
+            <a href="https://www.reddit.com/" target="_blank"><span>Reddit</span></a>
+        </p>
     </div>
 </section>
 `;

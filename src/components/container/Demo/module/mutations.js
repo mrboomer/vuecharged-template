@@ -1,5 +1,5 @@
 /**
- * Example Mutations
+ * Demo Mutations
  *
  * The only way to change the state in Vuex is by committing a mutation. This is
  * also the function that updates the view.
@@ -21,6 +21,7 @@ import {
   UPDATE_NAME,
   INCREMENT,
   DECREMENT,
+  GET_REDDIT_POSTS,
 } from './constants';
 
 const mutations = {
@@ -32,6 +33,17 @@ const mutations = {
   },
   [DECREMENT](state) {
     state.count -= 1;
+  },
+  [GET_REDDIT_POSTS.REQUEST](state) {
+    state.loading = true;
+  },
+  [GET_REDDIT_POSTS.SUCCESS](state, payload) {
+    state.loading = false;
+    state.redditPosts = payload.posts;
+  },
+  [GET_REDDIT_POSTS.FAILURE](state, payload) {
+    state.loading = false;
+    state.getRedditPostsError = payload.error;
   },
 };
 

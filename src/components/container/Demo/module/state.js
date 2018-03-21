@@ -1,5 +1,5 @@
 /**
- * Example State
+ * Demo State
  *
  * This single object contains all the component level state.
  *
@@ -9,6 +9,9 @@
 const state = {
   name: 'John Doe',
   count: 0,
+  loading: false,
+  redditPosts: [],
+  getRedditPostsError: '',
 };
 
 export default state;

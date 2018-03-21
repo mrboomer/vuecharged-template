@@ -1,5 +1,5 @@
 /**
- * Example Global Getters
+ * Demo Getters
  *
  * These are functions that take the module state object and returns a value from it.
  * You can think of getters as computed properties for data in this module.
@@ -19,6 +19,12 @@ const getters = {
     };
 
     return fibonacci(state.count);
+  },
+  redditTopPostTitle(state) {
+    return state.redditPosts.length ? state.redditPosts[0].data.title : 'Loading...';
+  },
+  redditTopPostUrl(state) {
+    return state.redditPosts.length ? `https://www.reddit.com${state.redditPosts[0].data.permalink}` : '#';
   },
 };
 

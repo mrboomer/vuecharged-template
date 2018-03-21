@@ -1,5 +1,5 @@
 /**
- * Example Store Module
+ * Demo Component Module
  *
  * Usage:
  *

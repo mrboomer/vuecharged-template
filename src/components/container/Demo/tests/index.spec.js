@@ -1,13 +1,13 @@
 import { shallow, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
-import ExampleComponent from '../index';
+import DemoComponent from '../index';
 
 const renderer = require('vue-server-renderer').createRenderer();
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-describe('Example Component', () => {
+describe('Demo Component', () => {
   let store;
   let state;
   let actions;
@@ -23,16 +23,19 @@ describe('Example Component', () => {
       updateName: jest.fn(),
       incrementCounter: jest.fn(),
       decrementCounter: jest.fn(),
+      getRedditPosts: jest.fn(),
     };
 
     getters = {
       positiveCount: () => 2,
       fibonacciNumber: () => 1,
+      redditTopPostTitle: () => 'Reddit',
+      redditTopPostUrl: () => 'https://www.reddit.com/',
     };
 
     store = new Vuex.Store({
       modules: {
-        example: {
+        demo: {
           namespaced: true,
           state,
           actions,
@@ -43,7 +46,7 @@ describe('Example Component', () => {
   });
 
   it('dispatches "UPDATE_NAME" action when input is changed', () => {
-    const wrapper = shallow(ExampleComponent, { store, localVue });
+    const wrapper = shallow(DemoComponent, { store, localVue });
     const input = wrapper.find('input');
 
     // Simulate Add Text
@@ -62,7 +65,7 @@ describe('Example Component', () => {
   });
 
   it('dispatches "DECREMENT" action when button is clicked', () => {
-    const wrapper = shallow(ExampleComponent, { store, localVue });
+    const wrapper = shallow(DemoComponent, { store, localVue });
 
     // Simulate Click
     wrapper.find('button:first-of-type').trigger('click');
@@ -72,7 +75,7 @@ describe('Example Component', () => {
   });
 
   it('dispatches "INCREMENT" action when button is clicked', () => {
-    const wrapper = shallow(ExampleComponent, { store, localVue });
+    const wrapper = shallow(DemoComponent, { store, localVue });
 
     // Simulate Click
     wrapper.find('button:last-of-type').trigger('click');
@@ -82,7 +85,7 @@ describe('Example Component', () => {
   });
 
   it('renders values from store state', () => {
-    const wrapper = shallow(ExampleComponent, { store, localVue });
+    const wrapper = shallow(DemoComponent, { store, localVue });
 
     // Rendered Locations
     const h2Span = wrapper.find('h2 span');
@@ -94,7 +97,7 @@ describe('Example Component', () => {
   });
 
   it('renders values from getters', () => {
-    const wrapper = shallow(ExampleComponent, { store, localVue });
+    const wrapper = shallow(DemoComponent, { store, localVue });
 
     // Rendered Locations
     const h4SpanFirst = wrapper.find('h4 span:first-of-type');
@@ -106,7 +109,7 @@ describe('Example Component', () => {
   });
 
   it('renders to a nice snapshot', () => {
-    const wrapper = shallow(ExampleComponent, { store, localVue });
+    const wrapper = shallow(DemoComponent, { store, localVue });
     const { vm } = wrapper;
 
     renderer.renderToString(vm, (err, str) => {

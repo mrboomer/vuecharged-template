@@ -1,7 +1,7 @@
 /* eslint import/prefer-default-export: 0 */
 
 /**
- * Example Constants (Mutation Types)
+ * Demo Constants (Mutation Types)
  *
  * Mutations that are possible in this module.
  *
@@ -17,3 +17,9 @@ export const UPDATE_NAME = 'UPDATE_NAME';
 
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
+
+export const GET_REDDIT_POSTS = {
+  REQUEST: 'GET_REDDIT_POSTS_REQUEST',
+  SUCCESS: 'GET_REDDIT_POSTS_SUCCESS',
+  FAILURE: 'GET_REDDIT_POSTS_FAILURE',
+};
