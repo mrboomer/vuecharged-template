@@ -28,6 +28,14 @@ module.exports = {
       return response.wantActionsAndMutations;
     },
     type: 'confirm',
+    name: 'needSideEffects',
+    message: 'Will your actions have side effects?',
+    default: false,
+  }, {
+    when(response) {
+      return response.wantActionsAndMutations;
+    },
+    type: 'confirm',
     name: 'addToStore',
     message: 'Do you want to automatically add this module to the store?',
     default: true,
@@ -124,6 +132,22 @@ module.exports = {
         type: 'add',
         path: '../../src/components/container/{{properCase name}}/module/tests/getters.spec.js',
         templateFile: './container/module/tests/getters.spec.js.hbs',
+        abortOnFail: true,
+      });
+    }
+
+    // If component needs a side-effects.js file
+    if (data.needSideEffects) {
+      actions.push({
+        type: 'add',
+        path: '../../src/components/container/{{properCase name}}/module/side-effects.js',
+        templateFile: './container/module/side-effects.js.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'add',
+        path: '../../src/components/container/{{properCase name}}/module/tests/side-effects.spec.js',
+        templateFile: './container/module/tests/side-effects.spec.js.hbs',
         abortOnFail: true,
       });
     }
