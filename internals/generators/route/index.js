@@ -42,7 +42,7 @@ module.exports = {
     const action = {
       type: 'modify',
       path: '../../src/router/routes.js',
-      pattern: /(;\n\sexport\sdefault\s\[\n\s\s\{)/,
+      pattern: /(;\n\nexport[\s\S]*},)/, // /(;\n\sexport\sdefault\s\[\n\s\s\{)/,
     };
 
     if (helpers.viewImportExists(data.view)) {
