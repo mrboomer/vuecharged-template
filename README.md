@@ -111,6 +111,7 @@ This template is highly opinionated to help with scaling large apps and follow i
 
 This project is primarily built around:
 
+- vue
 - vuex
 - vue-router
 
