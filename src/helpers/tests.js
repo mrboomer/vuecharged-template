@@ -1,6 +1,6 @@
 /* eslint import/prefer-default-export: 0 */
 
-// Helper for testing async actions with expected mutations
+// Helper for testing actions with expected mutations
 export const testAction = (action, payload, state, expectedMutations, done) => {
   let count = 0;
 
