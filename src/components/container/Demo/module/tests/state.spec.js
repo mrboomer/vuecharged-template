@@ -5,6 +5,9 @@ describe('Demo State', () => {
     expect(Object.keys(state)).toEqual(expect.arrayContaining([
       'name',
       'count',
+      'loading',
+      'redditPosts',
+      'getRedditPostsError',
     ]));
   });
 });

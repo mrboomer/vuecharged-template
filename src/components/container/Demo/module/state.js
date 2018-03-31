@@ -11,7 +11,7 @@ const state = {
   count: 0,
   loading: false,
   redditPosts: [],
-  getRedditPostsError: '',
+  getRedditPostsError: [],
 };
 
 export default state;
