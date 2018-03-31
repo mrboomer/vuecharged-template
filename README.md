@@ -125,6 +125,7 @@ All your developmental concerns should live in the `src` folder. Here is a high-
     │   ├── components
     │   │   ├── container            # "how things work" components
     │   │   ├── presentational       # "how things look" components
+    │   ├── helpers                  # app specific helper files
     │   ├── router
     │   │   ├── routes.js            # add "view" routes here
     │   │   └── ...
@@ -150,6 +151,10 @@ This is intentional to help separate the types of components that are created. F
 I would encourage you to [read this article](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) by Dan Abramov to help you better understand the distinction between container and presentational components.
 
 You can automatically create container components from the command line by running `npm run generate container`, and create presentational components with `npm run generate presentational`.
+
+### `./src/helpers`
+
+Keep all of your app specific helper files here. This is where you add functions that help you solve specific tasks that are usually reoccurring.
 
 ### `./src/router/routes.js`
 
