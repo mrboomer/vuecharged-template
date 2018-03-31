@@ -180,11 +180,11 @@ Your component store modules need to be added to this file to be included into t
 
 Separating your components between container and presentational types is not enough. While it helps you quickly figure out what type of component it is, it doesn't tell you if it's connected to a route.
 
-Think of these "view" components as web page containers. They should contain a collection of container/presentational components, along with page layout elements to create its structure. This way you know which components belong to a certain page.
+Think of these "view" components as webpage containers. They should contain a collection of container/presentational components, along with page layout elements to create its structure. This way you know which components belong to a certain page.
 
-Limit what you do in these components to high level page elements and text. The bulk of the view component's concern should just be including container/presentational components created in the `components` folder.
+Limit the focus of these components to layout, high level page elements, text, and styles. The bulk of the view component's concern should just be including container/presentational components created in the `components` folder.
 
-You can automatically create view components from the command line by running `npm run generate view`.
+You can automatically create a view component and its route from the command line by running `npm run generate view`.
 
 ### `./src/index.html`
 
