@@ -1,9 +1,14 @@
+import { testAction } from '@/helpers/tests';
 import actions from '../actions';
 import {
   UPDATE_NAME,
   INCREMENT,
   DECREMENT,
+  GET_REDDIT_POSTS,
 } from '../constants';
+import { fetchRedditPosts } from '../side-effects';
+
+jest.mock('../side-effects');
 
 describe('Demo Actions', () => {
   it('updateName', () => {
@@ -38,5 +43,45 @@ describe('Demo Actions', () => {
 
     // Process Action
     actions.decrementCounter({ commit });
+  });
+
+  it('getRedditPosts success', (done) => {
+    // Mock Response
+    const response = [{
+      data: {
+        title: 'Reddit',
+        permalink: '/r/all',
+      },
+    }];
+
+    // Mock Payload
+    const mockPayload = {
+      posts: response,
+    };
+
+    // Mock Side Effect
+    fetchRedditPosts.mockImplementation(() => Promise.resolve(response));
+
+    // Process Action with Helper Function
+    testAction(actions.getRedditPosts, null, {}, [
+      { type: GET_REDDIT_POSTS.REQUEST },
+      { type: GET_REDDIT_POSTS.SUCCESS, payload: mockPayload },
+    ], done);
+  });
+
+  it('getRedditPosts failure', (done) => {
+    // Mock Payload
+    const mockPayload = {
+      error: new Error('failure'),
+    };
+
+    // Mock Side Effect
+    fetchRedditPosts.mockImplementation(() => Promise.reject(new Error('failure')));
+
+    // Process Action with Helper Function
+    testAction(actions.getRedditPosts, null, {}, [
+      { type: GET_REDDIT_POSTS.REQUEST },
+      { type: GET_REDDIT_POSTS.FAILURE, payload: mockPayload },
+    ], done);
   });
 });

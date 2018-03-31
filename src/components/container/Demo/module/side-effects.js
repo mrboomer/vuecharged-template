@@ -1,6 +1,6 @@
 /* eslint import/prefer-default-export: 0 */
 
-export const getRedditData = () => new Promise((resolve, reject) => {
+export const fetchRedditPosts = () => new Promise((resolve, reject) => {
   fetch('https://www.reddit.com/r/all.json')
     .then((res) => res.json())
     .then((response) => {

@@ -14,7 +14,7 @@ import {
   DECREMENT,
   GET_REDDIT_POSTS,
 } from './constants';
-import { getRedditData } from './side-effects';
+import { fetchRedditPosts } from './side-effects';
 
 const actions = {
   updateName({ commit }, payload) {
@@ -39,7 +39,7 @@ const actions = {
     });
 
     try {
-      const posts = await getRedditData();
+      const posts = await fetchRedditPosts();
 
       commit({
         type: GET_REDDIT_POSTS.SUCCESS,
