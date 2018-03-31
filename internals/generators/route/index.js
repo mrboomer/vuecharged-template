@@ -39,19 +39,19 @@ module.exports = {
   // Add the route to the routes.js file
   actions: (data) => {
     const actions = [];
-    const action = {
+    const addRouteAction = {
       type: 'modify',
       path: '../../src/router/routes.js',
-      pattern: /(;\n\nexport[\s\S]*},)/, // /(;\n\sexport\sdefault\s\[\n\s\s\{)/,
+      pattern: /(;\n\nexport[\s\S]*},)/,
     };
 
     if (helpers.viewImportExists(data.view)) {
-      action.template = helpers.trimTemplateFile('./route/routeOnly.hbs');
+      addRouteAction.template = helpers.trimTemplateFile('./route/routeOnly.hbs');
     } else {
-      action.template = helpers.trimTemplateFile('./route/route.hbs');
+      addRouteAction.template = helpers.trimTemplateFile('./route/route.hbs');
     }
 
-    actions.push(action);
+    actions.push(addRouteAction);
 
     return actions;
   },
