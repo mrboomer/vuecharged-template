@@ -2,6 +2,6 @@
 
 exports[`Footer Component renders to a nice snapshot 1`] = `
 <footer class="footer">
-    <a href="https://github.com/mrboomer/vuecharged-template/blob/master/README.md" target="_blank">Docs</a>
+  <a href="https://github.com/mrboomer/vuecharged-template/blob/master/README.md" target="_blank">Docs</a>
 </footer>
 `;
