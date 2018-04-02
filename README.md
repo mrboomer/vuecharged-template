@@ -45,6 +45,9 @@
   <dt>Centralized State Management</dt>
   <dd>Keeping your state predictable the first time, every time.</dd>
 
+  <dt>Internationalization Ready</dt>
+  <dd>Your app is ready to speak to anyone around the world.</dd>
+
   <dt>Beautiful Stylesheets</dt>
   <dd>...using Sassy CSS. All properly formatted CSS is valid Sass!</dd>
 
@@ -126,6 +129,7 @@ All your developmental concerns should live in the `src` folder. Here is a high-
     │   │   ├── container            # "how things work" components
     │   │   ├── presentational       # "how things look" components
     │   ├── helpers                  # app specific helper files
+    │   ├── i18n                     # globally defined localization
     │   ├── router
     │   │   ├── routes.js            # add "view" routes here
     │   │   └── ...
@@ -155,6 +159,12 @@ You can automatically create container components from the command line by runni
 ### `./src/helpers`
 
 Keep all of your app specific helper files here. This is where you add functions that help you solve specific tasks that are usually reoccurring.
+
+### `./src/i18n`
+
+Internationalization should always be supported in an app even if you're only using one language. You never want to find yourself reworking the whole app to support other languages. It’s always much easier if you do it right from the beginning. Luckily for you, this template has got you covered.
+
+While this folder lets you set global translations, you should only use it as a fallback option. Just like each component carries its own logic, it should also carry its own translations.
 
 ### `./src/router/routes.js`
 
