@@ -13,6 +13,8 @@ describe('Demo Component', () => {
   let actions;
   let getters;
 
+  DemoComponent.i18n.locale = 'en';
+
   beforeEach(() => {
     state = {
       name: 'John Doe',

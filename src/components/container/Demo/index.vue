@@ -7,45 +7,75 @@
         alt="VueCharged Logo">
 
       <!-- Input Example -->
-      <h2>Name: <span v-text="name" /></h2>
+      <i18n
+        tag="h2"
+        path="message.h2">
+        <span
+          place="name"
+          v-text="name" />
+      </i18n>
       <input
         :placeholder="name"
         type="text"
         @input="updateName">
 
       <!-- Counter Example -->
-      <h3>Count: <span v-text="count" /></h3>
+      <i18n
+        tag="h3"
+        path="message.h3">
+        <span
+          place="count"
+          v-text="count" />
+      </i18n>
       <div>
-        <button
+        <i18n
+          tag="button"
           type="button"
-          @click="decrement">Decrement</button>
-        <button
+          path="message.decrement"
+          @click="decrement" />
+        <i18n
+          tag="button"
           type="button"
-          @click="increment">Increment</button>
+          path="message.increment"
+          @click="increment" />
       </div>
 
       <!-- Getter Example -->
-      <h4>Fibonacci Number <span v-text="positiveCount" />: <span v-text="fibonacciNumber" /></h4>
+      <i18n
+        tag="h4"
+        path="message.h4">
+        <span
+          place="positiveCount"
+          v-text="positiveCount" />
+        <span
+          place="fibonacciNumber"
+          v-text="fibonacciNumber" />
+      </i18n>
 
       <!-- Async Example -->
-      <p>
-        Current Reddit Top Post:
+      <i18n
+        tag="p"
+        path="message.p">
         <a
           :href="redditTopPostUrl"
-          target="_blank"><span v-text="redditTopPostTitle" /></a>
-      </p>
+          target="_blank"
+          place="redditTopPostTitle"
+          v-text="redditTopPostTitle" />
+      </i18n>
     </div>
   </section>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
+import messages from './messages';
 
 // Namespaced Helper
 const { mapState, mapGetters } = createNamespacedHelpers('demo');
 
 export default {
   name: 'Demo',
+  i18n: { messages },
   computed: {
     ...mapState({
       name: (state) => state.name,
