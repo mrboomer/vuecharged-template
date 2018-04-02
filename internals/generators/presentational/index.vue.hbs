@@ -1,12 +1,25 @@
 <template>
   <section class="{{dashCase name}}">
+  {{#if wantI18n}}
+    <i18n
+      tag="span"
+      path="message.name" />
+  {{else}}
     <span>{{titleCase name}}</span>
+  {{/if}}
   </section>
 </template>
 
 <script>
+{{#if wantI18n}}
+import messages from './messages';
+
+{{/if}}
 export default {
   name: '{{properCase name}}',
+{{#if wantI18n}}
+  i18n: { messages },
+{{/if}}
 };
 </script>
 

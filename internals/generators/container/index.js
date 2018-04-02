@@ -39,6 +39,11 @@ module.exports = {
     name: 'addToStore',
     message: 'Do you want to automatically add this module to the store?',
     default: true,
+  }, {
+    type: 'confirm',
+    name: 'wantI18n',
+    default: true,
+    message: 'Do you want i18n messages (i.e. will this component use text)?',
   }],
   actions: (data) => {
     // Generate index.vue and index.spec.js
@@ -159,6 +164,16 @@ module.exports = {
         path: '../../src/store/index.js',
         pattern: /(\/\/\sModules[\s\S]*module')(;\s\nVue[\s\S]*Module,)/,
         template: helpers.trimTemplateFile('./container/store.hbs'),
+      });
+    }
+
+    // If component wants i18n
+    if (data.wantI18n) {
+      actions.push({
+        type: 'add',
+        path: '../../src/components/container/{{properCase name}}/messages.js',
+        templateFile: './container/messages.js.hbs',
+        abortOnFail: true,
       });
     }
 

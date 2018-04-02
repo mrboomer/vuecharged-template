@@ -1,19 +1,33 @@
 <template>
   <section class="{{dashCase name}}">
+  {{#if wantI18n}}
+    <i18n
+      tag="span"
+      path="message.name" />
+  {{else}}
     <span>{{titleCase name}}</span>
+  {{/if}}
   </section>
 </template>
 
 <script>
 {{#if wantActionsAndMutations}}
 import { createNamespacedHelpers } from 'vuex';
+{{/if}}
+{{#if wantI18n}}
+import messages from './messages';
+{{/if}}
+{{#if wantActionsAndMutations}}
 
 // Namespaced Helper
 const { mapState, mapGetters } = createNamespacedHelpers('{{camelCase name}}');
-
 {{/if}}
+
 export default {
   name: '{{properCase name}}',
+{{#if wantI18n}}
+  i18n: { messages },
+{{/if}}
 {{#if wantActionsAndMutations}}
   computed: {
     ...mapState({

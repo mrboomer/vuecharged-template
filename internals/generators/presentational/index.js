@@ -18,8 +18,13 @@ module.exports = {
 
       return 'The name is required';
     },
+  }, {
+    type: 'confirm',
+    name: 'wantI18n',
+    default: true,
+    message: 'Do you want i18n messages (i.e. will this component use text)?',
   }],
-  actions: () => {
+  actions: (data) => {
     // Generate index.vue and index.spec.js
     const actions = [{
       type: 'add',
@@ -32,6 +37,16 @@ module.exports = {
       templateFile: './presentational/tests/index.spec.js.hbs',
       abortOnFail: true,
     }];
+
+    // If component wants i18n
+    if (data.wantI18n) {
+      actions.push({
+        type: 'add',
+        path: '../../src/components/presentational/{{properCase name}}/messages.js',
+        templateFile: './presentational/messages.js.hbs',
+        abortOnFail: true,
+      });
+    }
 
     return actions;
   },
