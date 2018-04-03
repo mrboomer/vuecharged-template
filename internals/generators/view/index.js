@@ -43,6 +43,11 @@ module.exports = {
 
       return 'The path is required';
     },
+  }, {
+    type: 'confirm',
+    name: 'wantI18n',
+    default: true,
+    message: 'Do you want i18n messages (i.e. will this component use text)?',
   }],
   actions: (data) => {
     // Generate index.js

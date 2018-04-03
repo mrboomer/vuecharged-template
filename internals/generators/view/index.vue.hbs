@@ -1,6 +1,22 @@
+{{#if wantI18n}}
+<i18n>
+{
+  "en": {
+    "name": "{{titleCase name}}"
+  }
+}
+</i18n>
+
+{{/if}}
 <template>
   <main>
-    <h2>{{properCase name}}</h2>
+  {{#if wantI18n}}
+    <i18n
+      tag="h2"
+      path="name" />
+  {{else}}
+    <h2>{{titleCase name}}</h2>
+  {{/if}}
   </main>
 </template>
 
