@@ -182,11 +182,11 @@ This is where you add individual files or entire directories that you want to be
 
 ### `./src/static/manifest.json`
 
+From [MDN](https://developer.mozilla.org/en-US/docs/Web/Manifest):
+
 > The purpose of the manifest is to install web applications to the homescreen of a device, providing users with quicker access and a richer experience.
 
 > Web app manifests are part of a collection of web technologies called progressive web apps, which are web applications that can be installed to the homescreen of a device without needing the user to go through an app store, along with other capabilities such as  being available offline and receiving push notifications.
-
-[Source](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 
 ### `./src/store`
 
