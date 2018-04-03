@@ -134,6 +134,8 @@ All your developmental concerns should live in the `src` folder. Here is a high-
     │   │   ├── routes.js            # add "view" routes here
     │   │   └── ...
     │   ├── static                   # static files/directories go here
+    │   │   ├── manifest.json        # web app manifest (pwa)
+    │   │   └── ...
     │   ├── store                    # global state goes here
     │   │   ├── index.js             # add store component modules here
     │   │   └── ...
@@ -177,6 +179,14 @@ Routes can only be created from view components. See "./src/view" section below.
 ### `./src/static`
 
 This is where you add individual files or entire directories that you want to be copied over to the build directory. Sometimes you have external assets that just need to be included in your app, so this is where you add them.
+
+### `./src/static/manifest.json`
+
+> The purpose of the manifest is to install web applications to the homescreen of a device, providing users with quicker access and a richer experience.
+
+> Web app manifests are part of a collection of web technologies called progressive web apps, which are web applications that can be installed to the homescreen of a device without needing the user to go through an app store, along with other capabilities such as  being available offline and receiving push notifications.
+
+[Source](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 
 ### `./src/store`
 
