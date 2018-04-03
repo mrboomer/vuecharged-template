@@ -121,7 +121,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     // OfflinePlugin is placed last to capture all the HtmlWebpackPlugin's
     // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
     new OfflinePlugin({
-      publicPath: '/',
+      appShell: config.build.assetsPublicPath,
+      publicPath: config.build.assetsPublicPath,
       caches: {
         main: [
           'assets/css/app.*.css',
@@ -129,11 +130,10 @@ const webpackConfig = merge(baseWebpackConfig, {
         ],
       },
       externals: [
-        '/',
+        config.build.assetsPublicPath,
       ],
       ServiceWorker: {
-        output: 'assets/js/sw.js',
-        navigateFallbackURL: '/',
+        publicPath: 'sw.js',
       },
       excludes: ['.htaccess'],
       AppCache: false,
