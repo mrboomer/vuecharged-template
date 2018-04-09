@@ -1,9 +1,5 @@
 import routes from '../routes';
 
-jest.mock('@/views/Home');
-jest.mock('@/views/NotFound');
-jest.mock('@/views/Examples');
-
 describe('Routes', () => {
   it('configured correctly', () => {
     expect(routes).toEqual(expect.any(Array));
