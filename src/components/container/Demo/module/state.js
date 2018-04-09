@@ -12,6 +12,7 @@ const state = {
   loading: false,
   redditPosts: [],
   getRedditPostsError: [],
+  locale: 'en',
 };
 
 export default state;

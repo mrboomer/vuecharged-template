@@ -2,6 +2,12 @@
 
 exports[`Home.vue Component renders to a nice snapshot 1`] = `
 <main>
-  <!---->
+  <section class="home">
+    <div class="container">
+      <img src="./img/VueChargedLogo.png" alt="VueCharged Logo">
+      <h2>Title</h2>
+      <p>Get Started</p>
+    </div>
+  </section>
 </main>
 `;

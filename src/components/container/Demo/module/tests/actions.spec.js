@@ -5,6 +5,7 @@ import {
   INCREMENT,
   DECREMENT,
   GET_REDDIT_POSTS,
+  UPDATE_LOCALE,
 } from '../constants';
 import { fetchRedditPosts } from '../side-effects';
 
@@ -83,5 +84,19 @@ describe('Demo Actions', () => {
       { type: GET_REDDIT_POSTS.REQUEST },
       { type: GET_REDDIT_POSTS.FAILURE, payload: mockPayload },
     ], done);
+  });
+
+  it('updateLocale', () => {
+    // Mock Payload
+    const mockPayload = { locale: 'en' };
+
+    // Mock Commit and Assert Results
+    const commit = ({ type, ...payload }) => {
+      expect(type).toBe(UPDATE_LOCALE);
+      expect(mockPayload).toEqual(expect.objectContaining(payload));
+    };
+
+    // Process Action
+    actions.updateLocale({ commit }, mockPayload);
   });
 });

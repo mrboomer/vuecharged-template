@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Examples.vue Component renders to a nice snapshot 1`] = `
+<main>
+  <h2>Title</h2>
+  <!---->
+</main>
+`;

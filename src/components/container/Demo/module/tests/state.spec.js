@@ -8,6 +8,7 @@ describe('Demo State', () => {
       'loading',
       'redditPosts',
       'getRedditPostsError',
+      'locale',
     ]));
   });
 });

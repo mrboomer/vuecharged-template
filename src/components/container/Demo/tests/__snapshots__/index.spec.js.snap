@@ -3,18 +3,29 @@
 exports[`Demo Component renders to a nice snapshot 1`] = `
 <section class="demo">
   <div class="container">
-    <img src="./img/VueChargedLogo.png" alt="VueCharged Logo">
-    <h2>Name: <span place="name">John Doe</span></h2>
-    <input placeholder="John Doe" type="text">
-    <h3>Count: <span place="count">2</span></h3>
-    <div>
+    <div class="ex-input">
+      <h3>Name: <span place="name">John Doe</span></h3>
+      <input placeholder="John Doe" type="text">
+    </div>
+    <div class="ex-counter">
+      <h4>Count: <span place="count">2</span></h4>
       <button type="button">Decrement</button>
       <button type="button">Increment</button>
     </div>
-    <h4>Fibonacci Number <span place="positiveCount">2</span>: <span place="fibonacciNumber">1</span></h4>
-    <p>Top Reddit Post:
-      <a href="https://www.reddit.com/" target="_blank" place="redditTopPostTitle">Reddit</a>
-    </p>
+    <div class="ex-getter">
+      <h4>Fibonacci Number <span place="positiveCount">2</span>: <span place="fibonacciNumber">1</span></h4>
+    </div>
+    <div class="ex-async">
+      <h4>Top Reddit Post</h4>
+      <a href="https://www.reddit.com/" target="_blank">Reddit</a>
+    </div>
+    <div class="ex-language">
+      <label for="locale">Change Language</label>
+      <select id="locale">
+        <option>en</option>
+        <option>es</option>
+      </select>
+    </div>
   </div>
 </section>
 `;

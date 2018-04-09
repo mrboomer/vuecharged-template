@@ -26,6 +26,7 @@ describe('Demo Component', () => {
       incrementCounter: jest.fn(),
       decrementCounter: jest.fn(),
       getRedditPosts: jest.fn(),
+      updateLocale: jest.fn(),
     };
 
     getters = {
@@ -47,7 +48,7 @@ describe('Demo Component', () => {
     });
   });
 
-  it('dispatches "UPDATE_NAME" action when input is changed', () => {
+  it('dispatches "updateName" action when input is changed', () => {
     const wrapper = shallow(DemoComponent, { store, localVue });
     const input = wrapper.find('input');
 
@@ -66,7 +67,7 @@ describe('Demo Component', () => {
     expect(actions.updateName.mock.calls).toHaveLength(2);
   });
 
-  it('dispatches "DECREMENT" action when button is clicked', () => {
+  it('dispatches "decrementCounter" action when button is clicked', () => {
     const wrapper = shallow(DemoComponent, { store, localVue });
 
     // Simulate Click
@@ -76,7 +77,7 @@ describe('Demo Component', () => {
     expect(actions.decrementCounter.mock.calls).toHaveLength(1);
   });
 
-  it('dispatches "INCREMENT" action when button is clicked', () => {
+  it('dispatches "incrementCounter" action when button is clicked', () => {
     const wrapper = shallow(DemoComponent, { store, localVue });
 
     // Simulate Click
@@ -86,24 +87,36 @@ describe('Demo Component', () => {
     expect(actions.incrementCounter.mock.calls).toHaveLength(1);
   });
 
+  it('dispatches "updateLocale" action when select is changed', () => {
+    const wrapper = shallow(DemoComponent, { store, localVue });
+    const select = wrapper.find('select');
+
+    // Simulate Option Change
+    select.element.selectedIndex = 1;
+    select.trigger('change');
+
+    // Assert Result
+    expect(actions.updateLocale.mock.calls).toHaveLength(1);
+  });
+
   it('renders values from store state', () => {
     const wrapper = shallow(DemoComponent, { store, localVue });
 
     // Rendered Locations
-    const h2Span = wrapper.find('h2 span');
-    const h3Span = wrapper.find('h3 span');
+    const nameLocation = wrapper.find('.ex-input h3 span');
+    const countLocation = wrapper.find('.ex-counter h4 span');
 
     // Assert Result
-    expect(h2Span.text()).toBe(state.name);
-    expect(h3Span.text()).toBe(state.count.toString());
+    expect(nameLocation.text()).toBe(state.name);
+    expect(countLocation.text()).toBe(state.count.toString());
   });
 
   it('renders values from getters', () => {
     const wrapper = shallow(DemoComponent, { store, localVue });
 
     // Rendered Locations
-    const h4SpanFirst = wrapper.find('h4 span:first-of-type');
-    const h4SpanLast = wrapper.find('h4 span:last-of-type');
+    const h4SpanFirst = wrapper.find('.ex-getter h4 span:first-of-type');
+    const h4SpanLast = wrapper.find('.ex-getter h4 span:last-of-type');
 
     // Assert Results
     expect(h4SpanFirst.text()).toBe(getters.positiveCount().toString());

@@ -4,6 +4,7 @@ import {
   INCREMENT,
   DECREMENT,
   GET_REDDIT_POSTS,
+  UPDATE_LOCALE,
 } from '../constants';
 
 describe('Demo Mutations', () => {
@@ -94,5 +95,17 @@ describe('Demo Mutations', () => {
     expect(state.getRedditPostsError).toEqual([{
       code: 0,
     }]);
+  });
+
+  it(UPDATE_LOCALE, () => {
+    // Mock State/payload
+    const state = { locale: 'es' };
+    const payload = { locale: 'en' };
+
+    // Apply Mutation
+    mutations[UPDATE_LOCALE](state, payload);
+
+    // Assert Result
+    expect(state.locale).toBe('en');
   });
 });

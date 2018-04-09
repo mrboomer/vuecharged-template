@@ -4,24 +4,22 @@
 
 const messages = {
   en: {
-    message: {
-      h2: 'Name: {name}',
-      h3: 'Count: {count}',
-      decrement: 'Decrement',
-      increment: 'Increment',
-      h4: 'Fibonacci Number {positiveCount}: {fibonacciNumber}',
-      p: 'Top Reddit Post: {redditTopPostTitle}',
-    },
+    name: 'Name: {name}',
+    count: 'Count: {count}',
+    decrement: 'Decrement',
+    increment: 'Increment',
+    fibonacci: 'Fibonacci Number {positiveCount}: {fibonacciNumber}',
+    reddit: 'Top Reddit Post',
+    language: 'Change Language',
   },
   es: {
-    message: {
-      h2: 'Nombre: {name}',
-      h3: 'Recuento: {count}',
-      decrement: 'Decrementar',
-      increment: 'Incrementar',
-      h4: 'Número {positiveCount} de Fibonacci: {fibonacciNumber}',
-      p: 'Entrada Superior de Reddit: {redditTopPostTitle}',
-    },
+    name: 'Nombre: {name}',
+    count: 'Recuento: {count}',
+    decrement: 'Decrementar',
+    increment: 'Incrementar',
+    fibonacci: 'Número {positiveCount} de Fibonacci: {fibonacciNumber}',
+    reddit: 'Entrada Superior de Reddit',
+    language: 'Cambiar Idioma',
   },
 };
 

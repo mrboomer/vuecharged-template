@@ -1,67 +1,76 @@
 <template>
   <section class="demo">
     <div class="container">
-      <!-- Logo -->
-      <img
-        src="./img/VueChargedLogo.png"
-        alt="VueCharged Logo">
-
       <!-- Input Example -->
-      <i18n
-        tag="h2"
-        path="message.h2">
-        <span
-          place="name"
-          v-text="name" />
-      </i18n>
-      <input
-        :placeholder="name"
-        type="text"
-        @input="updateName">
+      <div class="ex-input">
+        <i18n
+          tag="h3"
+          path="name">
+          <span
+            place="name"
+            v-text="name" />
+        </i18n>
+        <input
+          :placeholder="name"
+          type="text"
+          @input="updateName">
+      </div>
 
       <!-- Counter Example -->
-      <i18n
-        tag="h3"
-        path="message.h3">
-        <span
-          place="count"
-          v-text="count" />
-      </i18n>
-      <div>
+      <div class="ex-counter">
         <i18n
-          tag="button"
+          tag="h4"
+          path="count">
+          <span
+            place="count"
+            v-text="count" />
+        </i18n>
+        <button
           type="button"
-          path="message.decrement"
-          @click="decrement" />
-        <i18n
-          tag="button"
+          @click="decrement"
+          v-text="$t('decrement')" />
+        <button
           type="button"
-          path="message.increment"
-          @click="increment" />
+          @click="increment"
+          v-text="$t('increment')" />
       </div>
 
       <!-- Getter Example -->
-      <i18n
-        tag="h4"
-        path="message.h4">
-        <span
-          place="positiveCount"
-          v-text="positiveCount" />
-        <span
-          place="fibonacciNumber"
-          v-text="fibonacciNumber" />
-      </i18n>
+      <div class="ex-getter">
+        <i18n
+          tag="h4"
+          path="fibonacci">
+          <span
+            place="positiveCount"
+            v-text="positiveCount" />
+          <span
+            place="fibonacciNumber"
+            v-text="fibonacciNumber" />
+        </i18n>
+      </div>
 
       <!-- Async Example -->
-      <i18n
-        tag="p"
-        path="message.p">
+      <div class="ex-async">
+        <h4 v-text="$t('reddit')" />
         <a
           :href="redditTopPostUrl"
           target="_blank"
-          place="redditTopPostTitle"
           v-text="redditTopPostTitle" />
-      </i18n>
+      </div>
+
+      <!-- Language -->
+      <div class="ex-language">
+        <label
+          for="locale"
+          v-text="$t('language')" />
+        <select
+          id="locale"
+          :value="locale"
+          @change="updateLocale">
+          <option>en</option>
+          <option>es</option>
+        </select>
+      </div>
     </div>
   </section>
 </template>
@@ -80,6 +89,7 @@ export default {
     ...mapState({
       name: (state) => state.name,
       count: (state) => state.count,
+      locale: (state) => state.locale,
     }),
     ...mapGetters([
       'positiveCount',
@@ -106,6 +116,14 @@ export default {
     decrement() {
       this.$store.dispatch('demo/decrementCounter');
     },
+    updateLocale(e) {
+      const locale = e.target.value;
+      const payload = {
+        locale,
+      };
+
+      this.$store.dispatch('demo/updateLocale', payload);
+    },
   },
 };
 </script>
@@ -121,8 +139,13 @@ export default {
   padding: 0 15px;
 }
 
+div[class^="ex-"] {
+  padding: 10px;
+  border-top: 1px dashed #ebebeb;
+}
+
 h2, h3, h4 {
-  margin-top: 20px;
+  margin: 10px 0;
 }
 
 p {
@@ -130,8 +153,13 @@ p {
 }
 
 a {
+  display: inline-block;
   font-weight: 400;
   text-decoration: none;
   color: #35485d;
+}
+
+input, button, a {
+  margin-bottom: 10px;
 }
 </style>

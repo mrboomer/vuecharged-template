@@ -2,6 +2,8 @@
 
 exports[`Footer Component renders to a nice snapshot 1`] = `
 <footer class="footer">
+  <router-link to="/">Home</router-link>
+  <router-link to="examples">Examples</router-link>
   <a href="https://github.com/mrboomer/vuecharged-template/blob/master/README.md" target="_blank">Docs</a>
 </footer>
 `;

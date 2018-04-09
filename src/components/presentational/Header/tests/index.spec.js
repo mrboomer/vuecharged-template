@@ -4,6 +4,8 @@ import HeaderComponent from '../index';
 const renderer = require('vue-server-renderer').createRenderer();
 
 describe('Header Component', () => {
+  HeaderComponent.i18n.locale = 'en';
+
   const ClonedComponent = shallow(HeaderComponent);
   const { vm } = ClonedComponent;
 

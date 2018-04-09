@@ -8,11 +8,13 @@
  * Further Reading: https://vuex.vuejs.org/en/actions.html
  */
 
+import { setI18nLanguage } from '@/i18n';
 import {
   UPDATE_NAME,
   INCREMENT,
   DECREMENT,
   GET_REDDIT_POSTS,
+  UPDATE_LOCALE,
 } from './constants';
 import { fetchRedditPosts } from './side-effects';
 
@@ -51,6 +53,14 @@ const actions = {
         error,
       });
     }
+  },
+  updateLocale({ commit }, payload) {
+    const locale = setI18nLanguage(payload.locale);
+
+    commit({
+      type: UPDATE_LOCALE,
+      locale,
+    });
   },
 };
 

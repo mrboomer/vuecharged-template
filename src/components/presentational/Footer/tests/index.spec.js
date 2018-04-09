@@ -4,6 +4,8 @@ import FooterComponent from '../index';
 const renderer = require('vue-server-renderer').createRenderer();
 
 describe('Footer Component', () => {
+  FooterComponent.i18n.locale = 'en';
+
   const ClonedComponent = shallow(FooterComponent);
   const { vm } = ClonedComponent;
 

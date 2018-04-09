@@ -1,12 +1,15 @@
 <template>
   <header class="header">
-    <h1>VueCharged Template</h1>
+    <h1 v-text="$t('title')" />
   </header>
 </template>
 
 <script>
+import messages from './messages';
+
 export default {
   name: 'Header',
+  i18n: { messages },
 };
 </script>
 

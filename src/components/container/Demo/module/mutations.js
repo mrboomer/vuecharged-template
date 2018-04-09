@@ -22,6 +22,7 @@ import {
   INCREMENT,
   DECREMENT,
   GET_REDDIT_POSTS,
+  UPDATE_LOCALE,
 } from './constants';
 
 const mutations = {
@@ -44,6 +45,9 @@ const mutations = {
   [GET_REDDIT_POSTS.FAILURE](state, payload) {
     state.loading = false;
     state.getRedditPostsError = payload.error;
+  },
+  [UPDATE_LOCALE](state, payload) {
+    state.locale = payload.locale;
   },
 };
 

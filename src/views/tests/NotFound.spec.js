@@ -1,19 +1,18 @@
 import { shallow } from '@vue/test-utils';
-import HomeComponent from '../Home';
+import NotFoundComponent from '../NotFound';
 
 const renderer = require('vue-server-renderer').createRenderer();
 
-describe('Home.vue Component', () => {
+describe('NotFound.vue Component', () => {
   it('renders to a nice snapshot', () => {
     // Mock Messages
     const messages = {
       en: {
         title: 'Title',
-        getStarted: 'Get Started',
       },
     };
 
-    const wrapper = shallow(HomeComponent, {
+    const wrapper = shallow(NotFoundComponent, {
       i18n: {
         locale: 'en',
         messages,

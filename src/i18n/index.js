@@ -1,3 +1,5 @@
+/* eslint import/prefer-default-export: 0 */
+
 /**
  * Internationalization Plugin
  *
@@ -6,17 +8,25 @@
 
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
-import en from './en';
-import es from './es';
 
 Vue.use(VueI18n);
 
-export default new VueI18n({
-  locale: 'en',
+export const i18n = new VueI18n({
   fallbackLocale: 'en',
   silentTranslationWarn: true,
-  messages: {
-    en,
-    es,
-  },
 });
+
+// Set i18n Language Helper
+export const setI18nLanguage = (lang) => {
+  i18n.locale = lang;
+
+  const headers = new Headers();
+  headers.set('Accept-Language', lang);
+
+  document.querySelector('html').setAttribute('lang', lang);
+
+  return lang;
+};
+
+// Language Init
+setI18nLanguage('en');
