@@ -133,7 +133,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         config.build.assetsPublicPath,
       ],
       ServiceWorker: {
-        publicPath: 'sw.js',
+        publicPath: '/sw.js',
       },
       excludes: ['.htaccess'],
       AppCache: false,
