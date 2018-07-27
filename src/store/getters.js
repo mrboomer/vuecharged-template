@@ -7,8 +7,6 @@
  * Further Reading: https://vuex.vuejs.org/en/getters.html
  */
 
-const getters = {
-
-};
+const getters = {};
 
 export default getters;

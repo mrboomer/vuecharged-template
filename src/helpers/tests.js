@@ -9,14 +9,16 @@ export const testAction = (action, payload, state, expectedMutations, done) => {
     const mutation = expectedMutations[count];
 
     // Support Object-Style Commits
-    const isTypeObjectStyle = typeMutationArg !== null && typeof typeMutationArg === 'object';
+    const isTypeObjectStyle =
+      typeMutationArg !== null && typeof typeMutationArg === 'object';
     const type = isTypeObjectStyle ? typeMutationArg.type : typeMutationArg;
     let payloadReceived = payloadArg;
 
     if (isTypeObjectStyle) {
       delete typeMutationArg.type; // eslint-disable-line no-param-reassign
-      const hasPayload = Object.keys(typeMutationArg).length !== 0
-        && typeMutationArg.constructor === Object;
+      const hasPayload =
+        Object.keys(typeMutationArg).length !== 0 &&
+        typeMutationArg.constructor === Object;
 
       if (hasPayload) {
         payloadReceived = hasPayload && typeMutationArg;

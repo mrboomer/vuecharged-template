@@ -7,8 +7,6 @@
  * Further Reading: https://vuex.vuejs.org/en/state.html
  */
 
-const state = {
-
-};
+const state = {};
 
 export default state;

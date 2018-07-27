@@ -10,7 +10,7 @@ const viewGenerator = require('./view/index.js');
 const routeGenerator = require('./route/index.js');
 const helpers = require('./helpers.js');
 
-module.exports = (plop) => {
+module.exports = plop => {
   plop.setHelper('prependSlashToPath', helpers.prependSlashToPath);
   plop.setGenerator('presentational', presentationalGenerator);
   plop.setGenerator('container', containerGenerator);

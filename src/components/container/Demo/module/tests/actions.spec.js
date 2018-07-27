@@ -46,14 +46,16 @@ describe('Demo Actions', () => {
     actions.decrementCounter({ commit });
   });
 
-  it('getRedditPosts success', (done) => {
+  it('getRedditPosts success', done => {
     // Mock Response
-    const response = [{
-      data: {
-        title: 'Reddit',
-        permalink: '/r/all',
+    const response = [
+      {
+        data: {
+          title: 'Reddit',
+          permalink: '/r/all',
+        },
       },
-    }];
+    ];
 
     // Mock Payload
     const mockPayload = {
@@ -64,26 +66,40 @@ describe('Demo Actions', () => {
     fetchRedditPosts.mockImplementation(() => Promise.resolve(response));
 
     // Process Action with Helper Function
-    testAction(actions.getRedditPosts, null, {}, [
-      { type: GET_REDDIT_POSTS.REQUEST },
-      { type: GET_REDDIT_POSTS.SUCCESS, payload: mockPayload },
-    ], done);
+    testAction(
+      actions.getRedditPosts,
+      null,
+      {},
+      [
+        { type: GET_REDDIT_POSTS.REQUEST },
+        { type: GET_REDDIT_POSTS.SUCCESS, payload: mockPayload },
+      ],
+      done
+    );
   });
 
-  it('getRedditPosts failure', (done) => {
+  it('getRedditPosts failure', done => {
     // Mock Payload
     const mockPayload = {
       error: new Error('failure'),
     };
 
     // Mock Side Effect
-    fetchRedditPosts.mockImplementation(() => Promise.reject(new Error('failure')));
+    fetchRedditPosts.mockImplementation(() =>
+      Promise.reject(new Error('failure'))
+    );
 
     // Process Action with Helper Function
-    testAction(actions.getRedditPosts, null, {}, [
-      { type: GET_REDDIT_POSTS.REQUEST },
-      { type: GET_REDDIT_POSTS.FAILURE, payload: mockPayload },
-    ], done);
+    testAction(
+      actions.getRedditPosts,
+      null,
+      {},
+      [
+        { type: GET_REDDIT_POSTS.REQUEST },
+        { type: GET_REDDIT_POSTS.FAILURE, payload: mockPayload },
+      ],
+      done
+    );
   });
 
   it('updateLocale', () => {

@@ -60,9 +60,11 @@ describe('Demo Mutations', () => {
       redditPosts: [],
     };
     const payload = {
-      posts: [{
-        data: {},
-      }],
+      posts: [
+        {
+          data: {},
+        },
+      ],
     };
 
     // Apply Mutation
@@ -70,9 +72,11 @@ describe('Demo Mutations', () => {
 
     // Assert Results
     expect(state.loading).toBe(false);
-    expect(state.redditPosts).toEqual([{
-      data: {},
-    }]);
+    expect(state.redditPosts).toEqual([
+      {
+        data: {},
+      },
+    ]);
   });
 
   it(GET_REDDIT_POSTS.FAILURE, () => {
@@ -82,9 +86,11 @@ describe('Demo Mutations', () => {
       getRedditPostsError: [],
     };
     const payload = {
-      error: [{
-        code: 0,
-      }],
+      error: [
+        {
+          code: 0,
+        },
+      ],
     };
 
     // Apply Mutation
@@ -92,9 +98,11 @@ describe('Demo Mutations', () => {
 
     // Assert Results
     expect(state.loading).toBe(false);
-    expect(state.getRedditPostsError).toEqual([{
-      code: 0,
-    }]);
+    expect(state.getRedditPostsError).toEqual([
+      {
+        code: 0,
+      },
+    ]);
   });
 
   it(UPDATE_LOCALE, () => {

@@ -87,9 +87,9 @@ export default {
   i18n: { messages },
   computed: {
     ...mapState({
-      name: (state) => state.name,
-      count: (state) => state.count,
-      locale: (state) => state.locale,
+      name: state => state.name,
+      count: state => state.count,
+      locale: state => state.locale,
     }),
     ...mapGetters([
       'positiveCount',
@@ -139,12 +139,14 @@ export default {
   padding: 0 15px;
 }
 
-div[class^="ex-"] {
+div[class^='ex-'] {
   padding: 10px;
   border-top: 1px dashed #ebebeb;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   margin: 10px 0;
 }
 
@@ -159,7 +161,9 @@ a {
   color: #35485d;
 }
 
-input, button, a {
+input,
+button,
+a {
   margin-bottom: 10px;
 }
 </style>

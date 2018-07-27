@@ -36,16 +36,22 @@ describe('Demo Getters', () => {
     // Mock State
     const stateRedditPostsNone = { redditPosts: [] };
     const stateRedditPostsFull = {
-      redditPosts: [{
-        data: {
-          title: 'Reddit',
+      redditPosts: [
+        {
+          data: {
+            title: 'Reddit',
+          },
         },
-      }],
+      ],
     };
 
     // Process Getter
-    const resultRedditPostsNone = getters.redditTopPostTitle(stateRedditPostsNone);
-    const resultRedditPostsFull = getters.redditTopPostTitle(stateRedditPostsFull);
+    const resultRedditPostsNone = getters.redditTopPostTitle(
+      stateRedditPostsNone
+    );
+    const resultRedditPostsFull = getters.redditTopPostTitle(
+      stateRedditPostsFull
+    );
 
     // Assert Results
     expect(resultRedditPostsNone).toBe('Loading...');
@@ -56,16 +62,22 @@ describe('Demo Getters', () => {
     // Mock State
     const stateRedditPostsNone = { redditPosts: [] };
     const stateRedditPostsFull = {
-      redditPosts: [{
-        data: {
-          permalink: '/',
+      redditPosts: [
+        {
+          data: {
+            permalink: '/',
+          },
         },
-      }],
+      ],
     };
 
     // Process Getter
-    const resultRedditPostsNone = getters.redditTopPostUrl(stateRedditPostsNone);
-    const resultRedditPostsFull = getters.redditTopPostUrl(stateRedditPostsFull);
+    const resultRedditPostsNone = getters.redditTopPostUrl(
+      stateRedditPostsNone
+    );
+    const resultRedditPostsFull = getters.redditTopPostUrl(
+      stateRedditPostsFull
+    );
 
     // Assert Results
     expect(resultRedditPostsNone).toBe('#');

@@ -8,12 +8,8 @@
  * Further Reading: https://vuex.vuejs.org/en/actions.html
  */
 
-import {
+import {} from './constants';
 
-} from './constants';
-
-const actions = {
-
-};
+const actions = {};
 
 export default actions;

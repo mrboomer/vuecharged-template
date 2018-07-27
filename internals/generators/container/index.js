@@ -6,58 +6,71 @@ const helpers = require('../helpers.js');
 
 module.exports = {
   description: 'Add a Container Component',
-  prompts: [{
-    type: 'input',
-    name: 'name',
-    message: 'What should it be called?',
-    default: 'Form',
-    validate: (value) => {
-      if ((/.+/).test(value)) {
-        return helpers.componentExists(value) ? 'A component with this name already exists' : true;
-      }
+  prompts: [
+    {
+      type: 'input',
+      name: 'name',
+      message: 'What should it be called?',
+      default: 'Form',
+      validate: value => {
+        if (/.+/.test(value)) {
+          return helpers.componentExists(value)
+            ? 'A component with this name already exists'
+            : true;
+        }
 
-      return 'The name is required';
+        return 'The name is required';
+      },
     },
-  }, {
-    type: 'confirm',
-    name: 'wantActionsAndMutations',
-    default: true,
-    message: 'Do you want actions/constants/getters/mutations module for this container?',
-  }, {
-    when(response) {
-      return response.wantActionsAndMutations;
+    {
+      type: 'confirm',
+      name: 'wantActionsAndMutations',
+      default: true,
+      message:
+        'Do you want actions/constants/getters/mutations module for this container?',
     },
-    type: 'confirm',
-    name: 'needSideEffects',
-    message: 'Will your actions have side effects?',
-    default: false,
-  }, {
-    when(response) {
-      return response.wantActionsAndMutations;
+    {
+      when(response) {
+        return response.wantActionsAndMutations;
+      },
+      type: 'confirm',
+      name: 'needSideEffects',
+      message: 'Will your actions have side effects?',
+      default: false,
     },
-    type: 'confirm',
-    name: 'addToStore',
-    message: 'Do you want to automatically add this module to the store?',
-    default: true,
-  }, {
-    type: 'confirm',
-    name: 'wantI18n',
-    default: true,
-    message: 'Do you want i18n messages (i.e. will this component use text)?',
-  }],
-  actions: (data) => {
+    {
+      when(response) {
+        return response.wantActionsAndMutations;
+      },
+      type: 'confirm',
+      name: 'addToStore',
+      message: 'Do you want to automatically add this module to the store?',
+      default: true,
+    },
+    {
+      type: 'confirm',
+      name: 'wantI18n',
+      default: true,
+      message: 'Do you want i18n messages (i.e. will this component use text)?',
+    },
+  ],
+  actions: data => {
     // Generate index.vue and index.spec.js
-    const actions = [{
-      type: 'add',
-      path: '../../src/components/container/{{properCase name}}/index.vue',
-      templateFile: './container/index.vue.hbs',
-      abortOnFail: true,
-    }, {
-      type: 'add',
-      path: '../../src/components/container/{{properCase name}}/tests/index.spec.js',
-      templateFile: './container/tests/index.spec.js.hbs',
-      abortOnFail: true,
-    }];
+    const actions = [
+      {
+        type: 'add',
+        path: '../../src/components/container/{{properCase name}}/index.vue',
+        templateFile: './container/index.vue.hbs',
+        abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path:
+          '../../src/components/container/{{properCase name}}/tests/index.spec.js',
+        templateFile: './container/tests/index.spec.js.hbs',
+        abortOnFail: true,
+      },
+    ];
 
     // If component wants actions and mutations, generate actions.js, constants.js,
     // getters.js, mutations.js, and accompanying tests
@@ -65,13 +78,15 @@ module.exports = {
       // Entry
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/index.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/index.js',
         templateFile: './container/module/index.js.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/tests/index.spec.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/tests/index.spec.js',
         templateFile: './container/module/tests/index.spec.js.hbs',
         abortOnFail: true,
       });
@@ -79,13 +94,15 @@ module.exports = {
       // State
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/state.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/state.js',
         templateFile: './container/module/state.js.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/tests/state.spec.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/tests/state.spec.js',
         templateFile: './container/module/tests/state.spec.js.hbs',
         abortOnFail: true,
       });
@@ -93,7 +110,8 @@ module.exports = {
       // Constants
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/constants.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/constants.js',
         templateFile: './container/module/constants.js.hbs',
         abortOnFail: true,
       });
@@ -101,13 +119,15 @@ module.exports = {
       // Actions
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/actions.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/actions.js',
         templateFile: './container/module/actions.js.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/tests/actions.spec.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/tests/actions.spec.js',
         templateFile: './container/module/tests/actions.spec.js.hbs',
         abortOnFail: true,
       });
@@ -115,13 +135,15 @@ module.exports = {
       // Mutations
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/mutations.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/mutations.js',
         templateFile: './container/module/mutations.js.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/tests/mutations.spec.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/tests/mutations.spec.js',
         templateFile: './container/module/tests/mutations.spec.js.hbs',
         abortOnFail: true,
       });
@@ -129,13 +151,15 @@ module.exports = {
       // Getters
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/getters.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/getters.js',
         templateFile: './container/module/getters.js.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/tests/getters.spec.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/tests/getters.spec.js',
         templateFile: './container/module/tests/getters.spec.js.hbs',
         abortOnFail: true,
       });
@@ -145,13 +169,15 @@ module.exports = {
     if (data.needSideEffects) {
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/side-effects.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/side-effects.js',
         templateFile: './container/module/side-effects.js.hbs',
         abortOnFail: true,
       });
       actions.push({
         type: 'add',
-        path: '../../src/components/container/{{properCase name}}/module/tests/side-effects.spec.js',
+        path:
+          '../../src/components/container/{{properCase name}}/module/tests/side-effects.spec.js',
         templateFile: './container/module/tests/side-effects.spec.js.hbs',
         abortOnFail: true,
       });

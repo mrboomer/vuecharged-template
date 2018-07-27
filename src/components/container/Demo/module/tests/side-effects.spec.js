@@ -7,19 +7,23 @@ describe('Demo Side-Effects', () => {
       json() {
         return {
           data: {
-            children: [{
-              data: {
-                title: 'Reddit',
-                permalink: '/r/all',
+            children: [
+              {
+                data: {
+                  title: 'Reddit',
+                  permalink: '/r/all',
+                },
               },
-            }],
+            ],
           },
         };
       },
     };
 
     // Mock Fetch
-    global.fetch = jest.fn().mockImplementation(() => Promise.resolve(response));
+    global.fetch = jest
+      .fn()
+      .mockImplementation(() => Promise.resolve(response));
 
     // Process Side-Effect
     const posts = await fetchRedditPosts();

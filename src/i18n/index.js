@@ -17,7 +17,7 @@ export const i18n = new VueI18n({
 });
 
 // Set i18n Language Helper
-export const setI18nLanguage = (lang) => {
+export const setI18nLanguage = lang => {
   i18n.locale = lang;
 
   const headers = new Headers();

@@ -6,7 +6,10 @@ const fs = require('fs');
 const path = require('path');
 
 function toTitleCase(str) {
-  return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+  return str.replace(
+    /\w\S*/g,
+    txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+  );
 }
 
 module.exports = {
@@ -18,11 +21,17 @@ module.exports = {
   },
   trimTemplateFile(template) {
     // Loads the template file and trims the whitespace and then returns the content as a string.
-    return fs.readFileSync(path.join(__dirname, template), 'utf8').replace(/\s*$/, '');
+    return fs
+      .readFileSync(path.join(__dirname, template), 'utf8')
+      .replace(/\s*$/, '');
   },
   componentExists(comp) {
-    const pageContainers = fs.readdirSync(path.join(__dirname, '../../src/components/container'));
-    const pagePresentationals = fs.readdirSync(path.join(__dirname, '../../src/components/presentational'));
+    const pageContainers = fs.readdirSync(
+      path.join(__dirname, '../../src/components/container')
+    );
+    const pagePresentationals = fs.readdirSync(
+      path.join(__dirname, '../../src/components/presentational')
+    );
     const components = pageContainers.concat(pagePresentationals);
     return components.indexOf(comp) >= 0;
   },
@@ -33,7 +42,9 @@ module.exports = {
   viewImportExists(view) {
     const formattedView = toTitleCase(view);
     const viewImport = `const ${formattedView} = () => import('@/views/${formattedView}');`;
-    const fileData = fs.readFileSync(path.join(__dirname, '../../src/router/routes.js'));
+    const fileData = fs.readFileSync(
+      path.join(__dirname, '../../src/router/routes.js')
+    );
     if (fileData.indexOf(viewImport) >= 0) {
       return true;
     }
@@ -42,7 +53,9 @@ module.exports = {
   pathExists(inputtedPath) {
     const formattedPath = this.prependSlashToPath(inputtedPath);
     const routePath = `path: '${formattedPath}',`;
-    const fileData = fs.readFileSync(path.join(__dirname, '../../src/router/routes.js'));
+    const fileData = fs.readFileSync(
+      path.join(__dirname, '../../src/router/routes.js')
+    );
     if (fileData.indexOf(routePath) >= 0) {
       return true;
     }
