@@ -14,7 +14,7 @@
     "unit": "jest --config internals/config/jest.conf.js --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src",
-    "prettier": "prettier --single-quote --trailing-comma es5 --write '{app,__{tests,mocks}__}/**/*.js'",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write '{src,__{tests,mocks}__}/**/*.js'",
     "build": "node internals/helpers/build.js",
     "generate": "plop --plopfile internals/generators/index.js",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
