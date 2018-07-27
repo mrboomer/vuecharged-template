@@ -18,4 +18,5 @@ module.exports = {
     '!**/node_modules/**',
     '!src/helpers/tests.js',
   ],
+  testURL: 'http://localhost/',
 };
