@@ -17,12 +17,8 @@
  *    }
  */
 
-import {
+import {} from './constants';
 
-} from './constants';
-
-const mutations = {
-
-};
+const mutations = {};
 
 export default mutations;

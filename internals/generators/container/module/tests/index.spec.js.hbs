@@ -2,12 +2,14 @@ import store from '../index';
 
 describe('{{properCase name}} Component Module', () => {
   it('contains required store parts', () => {
-    expect(Object.keys(store)).toEqual(expect.arrayContaining([
-      'namespaced',
-      'state',
-      'actions',
-      'mutations',
-      'getters',
-    ]));
+    expect(Object.keys(store)).toEqual(
+      expect.arrayContaining([
+        'namespaced',
+        'state',
+        'actions',
+        'mutations',
+        'getters',
+      ])
+    );
   });
 });
