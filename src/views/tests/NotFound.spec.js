@@ -1,4 +1,4 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import NotFoundComponent from '../NotFound';
 
 const renderer = require('vue-server-renderer').createRenderer();
@@ -12,7 +12,7 @@ describe('NotFound.vue Component', () => {
       },
     };
 
-    const wrapper = shallow(NotFoundComponent, {
+    const wrapper = shallowMount(NotFoundComponent, {
       i18n: {
         locale: 'en',
         messages,

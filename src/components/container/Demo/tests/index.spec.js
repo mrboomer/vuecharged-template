@@ -1,4 +1,4 @@
-import { shallow, createLocalVue } from '@vue/test-utils';
+import { shallowMount, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
 import DemoComponent from '../index';
 
@@ -49,7 +49,7 @@ describe('Demo Component', () => {
   });
 
   it('dispatches "updateName" action when input is changed', () => {
-    const wrapper = shallow(DemoComponent, { store, localVue });
+    const wrapper = shallowMount(DemoComponent, { store, localVue });
     const input = wrapper.find('input');
 
     // Simulate Add Text
@@ -68,7 +68,7 @@ describe('Demo Component', () => {
   });
 
   it('dispatches "decrementCounter" action when button is clicked', () => {
-    const wrapper = shallow(DemoComponent, { store, localVue });
+    const wrapper = shallowMount(DemoComponent, { store, localVue });
 
     // Simulate Click
     wrapper.find('button:first-of-type').trigger('click');
@@ -78,7 +78,7 @@ describe('Demo Component', () => {
   });
 
   it('dispatches "incrementCounter" action when button is clicked', () => {
-    const wrapper = shallow(DemoComponent, { store, localVue });
+    const wrapper = shallowMount(DemoComponent, { store, localVue });
 
     // Simulate Click
     wrapper.find('button:last-of-type').trigger('click');
@@ -88,7 +88,7 @@ describe('Demo Component', () => {
   });
 
   it('dispatches "updateLocale" action when select is changed', () => {
-    const wrapper = shallow(DemoComponent, { store, localVue });
+    const wrapper = shallowMount(DemoComponent, { store, localVue });
     const select = wrapper.find('select');
 
     // Simulate Option Change
@@ -100,7 +100,7 @@ describe('Demo Component', () => {
   });
 
   it('renders values from store state', () => {
-    const wrapper = shallow(DemoComponent, { store, localVue });
+    const wrapper = shallowMount(DemoComponent, { store, localVue });
 
     // Rendered Locations
     const nameLocation = wrapper.find('.ex-input h3 span');
@@ -112,7 +112,7 @@ describe('Demo Component', () => {
   });
 
   it('renders values from getters', () => {
-    const wrapper = shallow(DemoComponent, { store, localVue });
+    const wrapper = shallowMount(DemoComponent, { store, localVue });
 
     // Rendered Locations
     const h4SpanFirst = wrapper.find('.ex-getter h4 span:first-of-type');
@@ -124,7 +124,7 @@ describe('Demo Component', () => {
   });
 
   it('renders to a nice snapshot', () => {
-    const wrapper = shallow(DemoComponent, { store, localVue });
+    const wrapper = shallowMount(DemoComponent, { store, localVue });
     const { vm } = wrapper;
 
     renderer.renderToString(vm, (err, str) => {

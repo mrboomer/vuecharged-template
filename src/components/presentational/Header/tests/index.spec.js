@@ -1,4 +1,4 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import HeaderComponent from '../index';
 
 const renderer = require('vue-server-renderer').createRenderer();
@@ -6,7 +6,7 @@ const renderer = require('vue-server-renderer').createRenderer();
 describe('Header Component', () => {
   HeaderComponent.i18n.locale = 'en';
 
-  const ClonedComponent = shallow(HeaderComponent);
+  const ClonedComponent = shallowMount(HeaderComponent);
   const { vm } = ClonedComponent;
 
   it('renders to a nice snapshot', () => {

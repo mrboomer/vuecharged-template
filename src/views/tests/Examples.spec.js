@@ -1,4 +1,4 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import ExamplesComponent from '../Examples';
 
 const renderer = require('vue-server-renderer').createRenderer();
@@ -12,7 +12,7 @@ describe('Examples.vue Component', () => {
       },
     };
 
-    const wrapper = shallow(ExamplesComponent, {
+    const wrapper = shallowMount(ExamplesComponent, {
       i18n: {
         locale: 'en',
         messages,

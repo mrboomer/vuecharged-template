@@ -2,8 +2,8 @@
 
 exports[`App Component renders to a nice snapshot 1`] = `
 <div id="app">
-  <!---->
+  <Header-stub></Header-stub>
   <router-view></router-view>
-  <!---->
+  <Footer-stub></Footer-stub>
 </div>
 `;

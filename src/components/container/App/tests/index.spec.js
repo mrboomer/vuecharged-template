@@ -1,10 +1,10 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import AppComponent from '../index';
 
 const renderer = require('vue-server-renderer').createRenderer();
 
 describe('App Component', () => {
-  const ClonedComponent = shallow(AppComponent);
+  const ClonedComponent = shallowMount(AppComponent);
   const { vm } = ClonedComponent;
 
   it('renders to a nice snapshot', () => {
