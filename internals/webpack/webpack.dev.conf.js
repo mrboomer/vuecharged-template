@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const portfinder = require('portfinder');
@@ -9,7 +8,7 @@ const baseWebpackConfig = require('./webpack.base.conf');
 const config = require('../config');
 const utils = require('../helpers/utils');
 
-const HOST = process.env.HOST;
+const { HOST } = process.env;
 const PORT = process.env.PORT && Number(process.env.PORT);
 
 const devWebpackConfig = merge(baseWebpackConfig, {
@@ -34,7 +33,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       ],
     },
     hot: true,
-    contentBase: false, // since we use CopyWebpackPlugin.
+    contentBase: path.resolve(__dirname, '../../src/static'),
     compress: true,
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
@@ -62,14 +61,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       template: 'src/index.html',
       inject: true,
     }),
-    // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../../src/static'),
-        to: config.dev.assetsSubDirectory,
-        ignore: ['.*'],
-      },
-    ]),
   ],
 });
 
