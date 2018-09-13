@@ -180,6 +180,8 @@ Routes can only be created from view components. See "./src/view" section below.
 
 This is where you add individual files or entire directories that you want to be copied over to the build directory. Sometimes you have external assets that just need to be included in your app, so this is where you add them.
 
+You can then reference your static files in the index.html file like this: `<link rel="stylesheet" href="<%= webpackConfig.output.publicPath %>assets/css/reset.css">`
+
 ### `./src/static/manifest.json`
 
 From [MDN](https://developer.mozilla.org/en-US/docs/Web/Manifest):
