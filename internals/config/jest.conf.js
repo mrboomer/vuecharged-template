@@ -5,6 +5,7 @@ module.exports = {
   moduleFileExtensions: ['js', 'json', 'vue'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^.+\\.(css|less|scss)$': 'identity-obj-proxy',
   },
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
